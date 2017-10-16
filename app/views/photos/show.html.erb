@@ -1,4 +1,11 @@
 <h4>Photos</h4>
+
 <% @photos.each do |photo| %>
   <%= image_tag photo.image %>
+  <%= link_to "Delete", photo_path( photo.id ), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+
 <% end %>
+
+<div id="photos">
+  <%= render 'form' %>
+</div>

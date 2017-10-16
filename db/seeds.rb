@@ -9,4 +9,4 @@ order3 = Order.create!( { status:"pending", name: "Debby", telephone:"980854321"
 order3 = Order.create!( { status:"To bake", name: "Ana", telephone:"980454321", email:"ana@gmail.com", remarks:"I want more breads", cake_size:23, cake_flavor:"Chocolate", cake_filling:"Strawberry Mousse", cake_decoration:"Fresh flower", cake_style:"Ombre", cake_decoration_color:"pink", cake_drip:true, cake_drip_color:"silver" } )
 order3 = Order.create!( { status:"To bake", name: "Serene", telephone:"980654321", email:"serene@gmail.com", remarks:"I want more cookies", cake_size:18, cake_flavor:"Citroen", cake_filling:"Strawberry Mousse", cake_decoration:"Baby Shower", cake_style:"Naked", cake_decoration_color:"blue", cake_drip:true, cake_drip_color:"green" } )
 
-photo1 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508168313/IMG-20171016-WA0002_q7pvla.jpg" } )
+photo1 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/c_scale,w_300/v1508168313/IMG-20171016-WA0002_q7pvla.jpg" } )
