@@ -1,0 +1,182 @@
+<%= form_for @order do |f| %>
+<div class="flex_container_vertical">
+  <div class="flex_item_no_border">
+    Cake size(cm)
+  </div>
+
+  <div class="flex_container">
+    <div class="flex_item_no_border">
+
+      <div class="flex_container_vertical">
+        <%= f.radio_button :cake_size, 12.5 %>
+        <%= f.label :cake_size, '12.5', value: 0 %>
+        <%= f.radio_button :cake_size, 15 %>
+        <%= f.label :cake_size, '15', value: 1 %>
+        <%= f.radio_button :cake_size, 18 %>
+        <%= f.label :cake_size, '18', value: 2 %>
+        <%= f.radio_button :cake_size, 20 %>
+        <%= f.label :cake_size, '20', value: 3 %>
+        <%= f.radio_button :cake_size, 23 %>
+        <%= f.label :cake_size, '23', value: 4 %>
+      </div>
+    </div>
+
+    <div class="flex_item_no_border">
+      Flavor
+    </div>
+
+    <div class="flex_container">
+      <div class="flex_item_no_border">
+
+        <div class="flex_container_vertical">
+          <%= f.radio_button :cake_flavor, "vanilla" %>
+          <%= f.label :cake_flavor, 'vanilla', value: 0 %>
+          <%= f.radio_button :cake_flavor, "chocolate" %>
+          <%= f.label :cake_flavor, 'chocolate', value: 1 %>
+          <%= f.radio_button :cake_flavor, "citroen" %>
+          <%= f.label :cake_flavor, 'citroen', value: 2 %>
+        </div>
+      </div>
+
+
+          <div class="flex_item_no_border">
+            Fillings
+          </div>
+
+          <div class="flex_container">
+            <div class="flex_item_no_border">
+
+              <div class="flex_container_vertical">
+
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Chocolate Mousse', value: 0 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Oreos Mousse', value: 1 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Cherries Mousse', value: 2 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Strawberry Mousse', value: 3 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Blueberry Mousse', value: 4 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Nutella', value: 5 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Lemon Curd', value: 6 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Cherries Jam', value: 7 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Strawberry Jam', value: 8 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Blueberry Jam', value: 9 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Oreos Cookies', value: 10 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Wallnuts', value: 11 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Almonds', value: 12 %>
+                <%= f.check_box :cake_filling %>
+                <%= f.label :cake_filling, 'Abricots', value: 13 %>
+
+              </div>
+            </div>
+
+
+
+
+
+      <div class="flex_item_no_border">
+        Style
+      </div>
+
+      <div class="flex_container">
+        <div class="flex_item_no_border">
+
+          <div class="flex_container_vertical">
+            <%= f.radio_button :cake_style, "even" %>
+            <%= f.label :cake_style, 'Even', value: 0 %>
+            <%= f.radio_button :cake_style, "marble" %>
+            <%= f.label :cake_style, 'Marble', value: 1 %>
+            <%= f.radio_button :cake_style, "ombre" %>
+            <%= f.label :cake_style, 'Ombre', value: 2 %>
+            <%= f.radio_button :cake_style, "naked" %>
+            <%= f.label :cake_style, 'Naked', value: 3 %>
+          </div>
+        </div>
+
+
+        <div class="flex_item_no_border">
+          Decoration
+        </div>
+
+        <div class="flex_container">
+          <div class="flex_item_no_border">
+
+            <div class="flex_container_vertical">
+              <%= f.radio_button :cake_decoration, "candy_party" %>
+              <%= f.label :cake_decoration, 'Candy Party', value: 0 %>
+              <%= f.radio_button :cake_decoration, "fresh_season" %>
+              <%= f.label :cake_decoration, 'Fresh Season Fruit', value: 1 %>
+              <%= f.radio_button :cake_decoration, "fresh_flowers" %>
+              <%= f.label :cake_decoration, 'Fresh Flowers', value: 2 %>
+              <%= f.radio_button :cake_decoration, "baby_shower" %>
+              <%= f.label :cake_decoration, 'Baby Shower', value: 3 %>
+              <%= f.radio_button :cake_decoration, "gender_reveal" %>
+              <%= f.label :cake_decoration, 'Gender Reveal', value: 4 %>
+              <%= f.radio_button :cake_decoration, "unicorn" %>
+              <%= f.label :cake_decoration, 'Unicorn', value: 5 %>
+              <%= f.radio_button :cake_decoration, "flamingo" %>
+              <%= f.label :cake_decoration, 'Flamingo', value: 6 %>
+            </div>
+          </div>
+
+
+          <div class="flex_item_no_border">
+            Decoration Color
+          </div>
+           <%= f.text_field :cake_decoration_color, placeholder: "Enter color" %>
+
+           <div class="flex_item_no_border">
+             Cake Drip
+           </div>
+
+             <%= f.check_box :cake_drip %> Cake Drip
+
+             <div class="flex_item_no_border">
+               Cake Drip Color
+             </div>
+             <%= f.text_field :cake_drip_color, placeholder: "Enter color" %>
+
+
+
+     <div>
+       <div class="flex_item_no_border">
+         Name
+       </div>
+     <%= f.text_field :name, placeholder: "Enter your name" %>
+     <div class="flex_item_no_border">
+       Telephone
+     </div>
+   <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %>
+   <div class="flex_item_no_border">
+     Email
+   </div>
+ <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %>
+ <div class="flex_item_no_border">
+   Remarks
+ </div>
+<%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %>
+     </div>
+
+
+
+
+
+
+  <div class:"actions">
+
+    <%= f.submit "Save", class: "btn btn-success"%>
+
+
+    </div>
+  </div>
+  <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016125823) do
+ActiveRecord::Schema.define(version: 20171016130759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,11 @@ ActiveRecord::Schema.define(version: 20171016125823) do
     t.string "cake_decoration_color"
     t.boolean "cake_drip"
     t.string "cake_drip_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-    create_table "posts", force: :cascade do |t|
+
+  create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.string "picture"
