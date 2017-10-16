@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171016134850) do
+ActiveRecord::Schema.define(version: 20171016153542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "biographies", force: :cascade do |t|
-    
+    t.string "title"
+    t.text "content"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-    create_table "orders", force: :cascade do |t|
+  create_table "orders", force: :cascade do |t|
     t.string "status"
     t.string "name"
     t.string "telephone"
@@ -34,6 +37,12 @@ ActiveRecord::Schema.define(version: 20171016134850) do
     t.string "cake_decoration_color"
     t.boolean "cake_drip"
     t.string "cake_drip_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
