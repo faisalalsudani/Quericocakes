@@ -1,0 +1,16 @@
+<%= form_for [@post] do |f| %>
+    <div class="form-group">
+      <label>Title</label>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <%= f.text_area :content %>
+    </div>
+    <div class="form-group">
+      <label>Picture</label>
+      <%= f.text_field :picture %>
+    </div>
+    <%= f.submit 'Save' %>
+  <%#= link_to "Back", root_path %>
+<% end %>
