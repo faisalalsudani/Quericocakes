@@ -1,0 +1,14 @@
+<%= form_for @biography do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :picture %>
+  <%= f.text_field :picture %>
+
+  <%= f.submit (@biography.new_record? ? "Create" : "Update") %>
+
+<% end %>
