@@ -1,0 +1,9 @@
+<h1><%= @biography.title %></h1>
+
+<p><%= @biography.title %></p>
+<p><%= @biography.content %></p>
+<%= image_tag @biography.picture %>
+
+<hr>
+<%= link_to "[Edit]", edit_biography_path(@biography.id) %>
+<%= link_to "[Delete]", biography_path(@biography.id), method: :delete, data: { confirm: "Are you sure?" } %>
