@@ -1,0 +1,7 @@
+<h1>Biography</h1>
+
+<% @biographies.each do |biography| %>
+  <p><%= biography.title %></p>
+  <p><%= biography.content %></p>
+  <p><%= biography.picture %></p>
+<% end %>
