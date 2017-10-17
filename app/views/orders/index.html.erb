@@ -1,1 +1,34 @@
 
+<h1> Welcome admin </h1>
+
+<h3> Here are your orders: </h3>
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Order Status
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Pending</a></li>
+    <li><a href="#">Confirmed</a></li>
+    <li><a href="#">Finished</a></li>
+  </ul>
+</div>
+<br/>
+
+<% @orders.each do |order| %>
+    <h3>Status: <%= order.status %></h3>
+
+    <h4>Name: <%= order.name %></h4>
+    <p>Telephone: <%= order.telephone %></p>
+    <p>E-mail: <%= order.email %></p>
+    <p>Remarks: <%= order.remarks %></p>
+    <p>Cake size: <%= order.cake_size %> cm</p>
+    <p>Cake flavor: <%= order.cake_flavor %></p>
+    <p>Cake filling: <%= order.cake_filling %></p>
+    <p>Cake decoration: <%= order.cake_decoration %></p>
+    <p>Cake style: <%= order.cake_style %></p>
+    <p>Cake decoration color: <%= order.cake_decoration_color %></p>
+    <p>Cake drip: <%= order.cake_drip %></p>
+    <p>Cake drip color: <%= order.cake_drip_color %></p>
+<% end %>
