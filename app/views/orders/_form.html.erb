@@ -102,6 +102,7 @@
             Decoration
           </div>
 
+
           <div class="flex_container">
             <div class="flex_item_no_border">
 
@@ -151,8 +152,10 @@
               Cake Drip
             </div>
 
-            <%= f.check_box :cake_drip %>
-            Cake Drip
+             <%= f.radio_button :cake_drip, "yes" %>
+           <%= f.label :cake_drip, 'Yes', value: 0 %>
+           <%= f.radio_button :cake_drip, "no" %>
+           <%= f.label :cake_drip, 'No', value: 1 %>
 
             <div class="flex_item_no_border">
               Cake Drip Color
