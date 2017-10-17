@@ -1,22 +1,20 @@
-<section class="header-index">
+<section class="top-image">
 <div class="container-fluid index">
-  <div class="index-header">
-    <%= render './shared/navbar' %>
-  </div>
   <div class="row">
-    <div class="home-title">
-      <h2>Homemade cakes</h2>
+    <div class="home-title" style="width:100%;">
+      <h2 style="text-align: center; color:black;">Homemade cakes</h2>
     </div>
-    <div class="cake-index">
+    <div class="cake-index" style="width:100%;">
       <%= image_tag("cake.png") %> <br>
       <button class="btn make-cake-btn">MAKE YOUR OWN CAKE</button>
     </div>
   </div>
+</div>
 </section>
 
 
 <!-- Bad example -->
-<section class="featured">
+<!-- <section class="featured">
   <% @posts = Post.all %>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
@@ -44,9 +42,66 @@
   </a>
 </div>
 </section>
-</div>
+</div> -->
 
 <!-- Good example -->
-<section class="featured">
+<section class="featured" style="margin-top:50px">
+  <h2>Featured in the media</h2>
+  <% @posts = Post.all %>
+  <div class="container">
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-md-4">
+          <div class="post">
+            <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap" style="width:100%; height:200px;">
+            <h4 class="card-title">
+              <%= post.title %>
+              <span><a href="#">Read more ...</a></span>
+            </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    <hr>
+</section>
 
+<section class="contact" style="margin-top:50px;">
+  <h2>Contact</h2>
+  <form id="contact-form" method="post" action="contact.php" role="form">
+    <div class="messages"></div>
+    <div class="controls">
+        <div class="row">
+          <div class="col-md-4">
+              <div class="form-group">
+                  <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                  <div class="help-block with-errors"></div>
+              </div>
+          </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row sned">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-send" value="Send message">
+            </div>
+        </div>
+    </div>
+</form>
 </section>
