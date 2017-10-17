@@ -4,6 +4,11 @@ class PhotosController < ApplicationController
     @photo = Photo.new
   end
 
+  def index
+    @photos = Photo.all
+    @photo = Photo.new
+  end
+
   def show
     @photos = Photo.all
     @photo = Photo.new
@@ -12,22 +17,22 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     if(@photo.destroy)
-      redirect_to photo_path
+      redirect_to photos_path
     else
 
     end
   end
 
   def create
-
-    @photo = Photo.new(photo_params)
-    @photo.save
+    image_params.each do |image|
+      Photo.new(image: image).save
+    end
+    redirect_to photos_path, notice: "Your photo was uploaded!"
   end
 
   private
 
-  def photo_params
-    params.require(:photo).permit(:image)
+  def image_params
+    params[:images].present? ? params.require(:images) : []
   end
-
 end

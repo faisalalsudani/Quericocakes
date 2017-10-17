@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QueriCakes</title>
+    <title>Que Rico Cakes</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -12,8 +12,12 @@
 
   <body>
       <div class="container-fluid">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+        <% if notice %>
+      <div class="alert alert-info" role="alert"><%= notice %></div>
+      <% end %>
+            <% if alert %>
+      <div class="alert alert-info" role="alert"><%= alert %></div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
