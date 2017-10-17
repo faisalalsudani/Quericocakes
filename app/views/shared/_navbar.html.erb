@@ -1,23 +1,22 @@
-<header role="banner">
-<nav id="navbar-primary" class="navbar" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-primary-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-  <div class="collapse navbar-collapse" id="navbar-primary-collapse">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Bakery</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Build your own cake</a></li>
-      <li><a href="#"><img id="logo-navbar-middle" src="<%= image_path('logo.png') %>" width="200" alt="Logo Thing main logo"></a></li>
-      <li><a href="#">cookies</a></li>
-      <li><a href="#">cakesicles</a></li>
-      <li><a href="#">meringue seashells</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-</header><!-- header role="banner" -->
+<nav class="navbar navbar-toggleable-md fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-custom">
+          <ul>
+            <div class="nav-new">
+              <div class="logo">
+              <a href="#" class="navbar-brand"><img id="logo-navbar-middle" src="<%= image_path('logo.png') %>" width="200" alt="Logo Thing main logo"></a>
+              </div>
+              <a href="" class="item">BAKERY</a>
+              <a href="" class="item">GALLERY</a>
+              <a href="" class="item">BUILD YOUR CAKE</a>
+              <a href="" class="item">COOKIES</a>
+              <a href="" class="item">CAKESICLES</a>
+              <a href="" class="item">MERINGUE SEASHELLS</a>
+            </div>
+        </div>
+      </div>
+    </nav>
