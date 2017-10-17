@@ -45,7 +45,7 @@
       <div class="flex_container">
         <div class="flex_item_no_border">
 
-          <div class="flex_container_vertical">
+          <div class="flex_container_vertical" id="fillings">
 
             <%= f.check_box :cake_filling %>
             <%= f.label :cake_filling, 'Chocolate Mousse', value: 0 %>
@@ -102,7 +102,6 @@
             Decoration
           </div>
 
-
           <div class="flex_container">
             <div class="flex_item_no_border">
 
@@ -127,7 +126,7 @@
             <div class="flex_item_no_border">
               Decoration Color
             </div>
-            <div class="field" class="checkbox-inline">
+            <div class="field" class="checkbox-inline" id="decoration">
               <%= f.check_box :cake_decoration_color %>
               <%= f.label :cake_decoration_color, class: "teal" %>
               <%= f.check_box :cake_decoration_color %>
@@ -152,15 +151,15 @@
               Cake Drip
             </div>
 
-             <%= f.radio_button :cake_drip, "yes" %>
-           <%= f.label :cake_drip, 'Yes', value: 0 %>
-           <%= f.radio_button :cake_drip, "no" %>
-           <%= f.label :cake_drip, 'No', value: 1 %>
+            <%= f.radio_button :cake_drip, "yes" %>
+            <%= f.label :cake_drip, 'Yes', value: 0 %>
+            <%= f.radio_button :cake_drip, "no" %>
+            <%= f.label :cake_drip, 'No', value: 1 %>
 
             <div class="flex_item_no_border">
               Cake Drip Color
             </div>
-            <div class="field" class="checkbox-inline">
+            <div class="field" class="checkbox-inline" id="drip">
               <%= f.check_box :cake_drip_color %>
               <%= f.label :cake_drip_color, class: "teal" %>
               <%= f.check_box :cake_drip_color %>
