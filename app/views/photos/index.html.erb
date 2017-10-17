@@ -1,11 +1,168 @@
+<div class="container">
 <h1>Gallery - Photos</h1>
 
 <div id="photos">
-  <%= render 'form' %>
+  <%= render 'form' if current_user %>
 </div>
 
-<% @photos.each do |photo| %>
-  <%= image_tag photo.image %>
-  <%= link_to "Delete", photo_path( photo.id ), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
 
-<% end %>
+
+
+
+
+<style>
+.img-responsive:hover {
+    opacity: 0.7;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.gal {
+
+
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+
+
+	}
+	.gal .img-set{ width: 100%; padding: 7px 0; }
+@media (max-width: 500px) {
+
+		.gal {
+
+
+	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+
+
+	}
+
+	}
+  @media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+.delete_image{
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  display: none;
+  margin-top: 7px;
+}
+.image_container:hover .delete_image{
+    display: block;
+}
+.image_container{
+  position: relative;
+}
+
+
+</style>
+<script>
+
+  function showImage(id){
+    var modalImg = document.getElementById(`modal${id}`);
+    var captionText = document.getElementById("caption");
+    var imgSource = document.getElementById(`${id}`).src;
+    document.getElementById(`block${id}`).style.display = "block";
+    modalImg.src = imgSource;
+    // captionText.innerHTML = document.getElementById(id).alt;
+  }
+  function closeImage(id){
+    document.getElementById(`block${id}`).style.display = "none";
+  }
+
+  </script>
+    <div class="col-md-12">
+      <div class="row">
+      <hr>
+
+        <div class="gal">
+        	<% @photos.each do |photo| %>
+
+            <div class="image_container">
+              <% if current_user %>
+                <%= button_to "X", photo_path(photo.id), method: :delete, data: { confirm: "Are you sure?" }, class: "delete_image"  %>
+              <% end %>
+        	     <%= image_tag photo.image, class: "img-responsive img-set", id: photo.id, onclick: "showImage(this.id)", alt: "Image #{photo.id}" %>
+
+            </div>
+            <div id="block<%= photo.id %>" class="modal">
+              <span class="close" id="<%= photo.id %>" onclick="closeImage(this.id)">&times;</span>
+              <%= image_tag photo.image, class: "modal-content", id: "modal#{photo.id}" %>
+              <!-- <div id="caption"></div> -->
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+</div>
