@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :biographies
   devise_for :users
+  
+  resources :biographies
   resources :posts
+  resources :orders
   resources :photos
   
 end
