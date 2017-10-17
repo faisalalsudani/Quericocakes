@@ -1,10 +1,9 @@
 <%= form_for @photo, html: { multipart: true } do |f| %>
 
-<label>Photos</label>
+<label>Upload photos:</label>
 
 <div class="form-group">
   <span class="btn btn-default">
-    Upload Photos
     <%= file_field_tag "images[]", type: :file, multiple: true %>
   </span>
 </div>
@@ -14,3 +13,4 @@
 </div>
 
 <% end %>
+<br/>
