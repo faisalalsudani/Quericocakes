@@ -21,3 +21,5 @@ photo9 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo
 photo10 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake10_nsnqeo.jpg" } )
 photo11 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake11_uhn595.jpg" } )
 photo12 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake12_vunatv.jpg" } )
+
+admin = User.create(email: "admin@querico.com", password: "123456")
