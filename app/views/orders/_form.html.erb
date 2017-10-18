@@ -29,40 +29,40 @@
       <h2>Cake filling</h2>
       <div class="row">
         <div class="col-md-3">
-          <%= f.check_box :cake_filling, id:"1_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Chocolate Mousse', @order.cake_filling.include?('chocolate_mousse'), id:"1_filling" %>
           <%= f.label :cake_filling, 'Chocolate Mousse' %><br>
-          <%= f.check_box :cake_filling, id:"2_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Oreos Mousse', @order.cake_filling.include?('oreos_mousse'), id:"2_filling" %>
           <%= f.label :cake_filling, 'Oreos Mousse'%><br>
-          <%= f.check_box :cake_filling, id:"3_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Cherries Mousse', @order.cake_filling.include?('cherries_mousse'), id:"3_filling" %>
           <%= f.label :cake_filling, 'Cherries Mousse'%><br>
-          <%= f.check_box :cake_filling, id:"4_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Strawberry Mousse', @order.cake_filling.include?('strawberry_mousse'), id:"4_filling" %>
           <%= f.label :cake_filling, 'Strawberry Mosse'%>
         </div>
         <div class="col-md-3">
-          <%= f.check_box :cake_filling, id:"5_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Blueberry Mousse', @order.cake_filling.include?('blueberry_mousse'), id:"5_filling" %>
           <%= f.label :cake_filling, 'Blueberry Mousse'%><br>
-          <%= f.check_box :cake_filling, id:"6_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Nutella', @order.cake_filling.include?('nutella'), id:"6_filling" %>
           <%= f.label :cake_filling, 'Nutella' %><br>
-          <%= f.check_box :cake_filling, id:"7_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Lemon Curd', @order.cake_filling.include?('lemon_curd'), id:"7_filling" %>
           <%= f.label :cake_filling, 'Lemon Curd'%><br>
-          <%= f.check_box :cake_filling, id:"8_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Cherries Jam', @order.cake_filling.include?('cherries_jam'), id:"8_filling" %>
           <%= f.label :cake_filling, 'Cherries Jam'%>
         </div>
         <div class="col-md-3">
-          <%= f.check_box :cake_filling, id:"9_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Strawberry Jam', @order.cake_filling.include?('strawberry_jam'), id:"9_filling" %>
           <%= f.label :cake_filling, 'Strawberry Jam'%><br>
-          <%= f.check_box :cake_filling, id:"10_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Blueberry Jam', @order.cake_filling.include?('blueberry_jam'), id:"10_filling" %>
           <%= f.label :cake_filling, 'Blueberry Jam' %><br>
-          <%= f.check_box :cake_filling, id:"11_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Oreos Cookies', @order.cake_filling.include?('oreos_cookies'), id:"11_filling" %>
           <%= f.label :cake_filling, 'Oreos Cookies' %><br>
-          <%= f.check_box :cake_filling, id:"12_filling" %>
-          <%= f.label :cake_filling, 'Wallnuts' %>
+          <%= check_box_tag 'order[cake_filling][]', 'Walnuts', @order.cake_filling.include?('walnuts'), id:"12_filling" %>
+          <%= f.label :cake_filling, 'Walnuts' %>
         </div>
         <div class="col-md-3">
-          <%= f.check_box :cake_filling, id:"13_filling" %>
+          <%= check_box_tag 'order[cake_filling][]', 'Almonds', @order.cake_filling.include?('almonds'), id:"13_filling" %>
           <%= f.label :cake_filling, 'Almonds' %><br>
-          <%= f.check_box :cake_filling, id:"14_filling" %>
-          <%= f.label :cake_filling, 'Abricots' %><br>
+          <%= check_box_tag 'order[cake_filling][]', 'Apricots', @order.cake_filling.include?('apricots'), id:"14_filling" %>
+          <%= f.label :cake_filling, 'Apricots' %><br>
         </div>
       </div>
     </div>
@@ -103,18 +103,19 @@
       </div>
     </div>
     <!-- end cake decoration -->
+
     <div class="cake-decoration-color">
       <h2>Decoration colors</h2>
       <div class="field colors" class="checkbox-inline" id="decoration-color">
-        <%= f.check_box :cake_decoration_color, class: "teal" %>
-        <%= f.check_box :cake_decoration_color, class: "salmon" %>
-        <%= f.check_box :cake_decoration_color, class: "orange" %>
-        <%= f.check_box :cake_decoration_color, class: "orchid" %>
-        <%= f.check_box :cake_decoration_color, class: "red" %>
-        <%= f.check_box :cake_decoration_color, class: "gold" %>
-        <%= f.check_box :cake_decoration_color, class: "purple" %>
-        <%= f.check_box :cake_decoration_color, class: "sky" %>
-        <%= f.check_box :cake_decoration_color, class: "baby_pink" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Teal', @order.cake_decoration_color.include?('teal'), class: "teal" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Salmon', @order.cake_decoration_color.include?('salmon'), class: "salmon" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Orange', @order.cake_decoration_color.include?('orange'), class: "orange" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Orchid', @order.cake_decoration_color.include?('orchid'), class: "orchid" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Red', @order.cake_decoration_color.include?('red'), class: "red" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Gold', @order.cake_decoration_color.include?('gold'), class: "gold" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Purple', @order.cake_decoration_color.include?('purple'), class: "purple" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Sky', @order.cake_decoration_color.include?('sky'), class: "sky" %>
+        <%= check_box_tag 'order[cake_decoration_color][]', 'Baby Pink', @order.cake_decoration_color.include?('baby_pink'), class: "baby_pink" %>
       </div>
     </div>
     <!-- end cake decoration color -->
@@ -127,17 +128,18 @@
     </div>
     <!-- end cake drip -->
     <div class="cake-decoration-color">
+
       <h2>Cake drip color</h2>
       <div class="field colors" class="checkbox-inline" id="drip-color">
-        <%= f.check_box :cake_drip_color, class: "teal" %>
-        <%= f.check_box :cake_drip_color, class: "salmon" %>
-        <%= f.check_box :cake_drip_color, class: "orange" %>
-        <%= f.check_box :cake_drip_color, class: "orchid" %>
-        <%= f.check_box :cake_drip_color, class: "red" %>
-        <%= f.check_box :cake_drip_color, class: "gold" %>
-        <%= f.check_box :cake_drip_color, class: "purple" %>
-        <%= f.check_box :cake_drip_color, class: "sky" %>
-        <%= f.check_box :cake_drip_color, class: "baby_pink" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Teal', @order.cake_drip_color.include?('teal'), class: "teal" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Salmon', @order.cake_drip_color.include?('salmon'), class: "salmon" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Orange', @order.cake_drip_color.include?('orange'), class: "orange" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Orchid', @order.cake_drip_color.include?('orchid'), class: "orchid" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Red', @order.cake_drip_color.include?('red'), class: "red" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Gold', @order.cake_drip_color.include?('gold'), class: "gold" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Purple', @order.cake_drip_color.include?('purple'), class: "purple" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Sky', @order.cake_drip_color.include?('sky'), class: "sky" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Baby Pink', @order.cake_drip_color.include?('baby_pink'), class: "baby_pink" %>
       </div>
     </div>
     <!-- end cake drip color -->

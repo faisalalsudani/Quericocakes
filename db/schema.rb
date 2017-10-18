@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016153542) do
+ActiveRecord::Schema.define(version: 20171018135325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 20171016153542) do
     t.text "remarks"
     t.decimal "cake_size"
     t.string "cake_flavor"
-    t.string "cake_filling"
+    t.string "cake_filling", default: [], array: true
     t.string "cake_decoration"
     t.string "cake_style"
-    t.string "cake_decoration_color"
+    t.string "cake_decoration_color", default: [], array: true
     t.boolean "cake_drip"
-    t.string "cake_drip_color"
+    t.string "cake_drip_color", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
