@@ -24,13 +24,14 @@
     - E-mail: <%= order.email %></p>
     <p>Remarks: <%= order.remarks %></p>
     <br/>
-    <p>Cake size: <%= order.cake_size %> cm</p>
-    <p>Cake flavor: <%= order.cake_flavor %></p>
-    <p>Cake filling: <%= order.cake_filling %></p>
-    <p>Cake decoration: <%= order.cake_decoration %>,
+    <h4>Cake details</h4>
+    <p>Size: <%= order.cake_size %> cm</p>
+    <p>Flavor: <%= order.cake_flavor %></p>
+    <p>Filling(s): <%= order.cake_filling %></p>
+    <p>Decoration: <%= order.cake_decoration %>,
     <%= order.cake_decoration_color %></p>
-    <p>Cake style: <%= order.cake_style %></p>
-    <p>Cake drip:
+    <p>Style: <%= order.cake_style %></p>
+    <p>Drip:
     <% if order.cake_drip %>
         <%=  "Yes," %>
       <% else %>
