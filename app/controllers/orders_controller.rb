@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.new(order_params.merge(status:"Pending"))
 
     if @order.save
       redirect_to @order
@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:cake_size, :cake_flavor, :cake_drip, :cake_decoration, :cake_style,  :name, 
+    params.require(:order).permit(:cake_size, :cake_flavor, :cake_drip, :cake_decoration, :cake_style,  :name,
       :telephone, :email, :remarks, :status, :cake_decoration_color => [], :cake_drip_color => [], :cake_filling => [])
   end
 end
