@@ -79,6 +79,29 @@
       <%= f.label :cake_style, 'Naked' %>
     </div>
     <!-- end cake style -->
+    <div class="cake-drop" id="drip">
+      <h2>Cake drip</h2>
+      <%= f.radio_button :cake_drip, "yes", id: "drip_yes" %>
+      <%= f.label :cake_drip, 'Yes', value: 0 %>
+      <%= f.radio_button :cake_drip, "no", id: "drip_no" %>
+      <%= f.label :cake_drip, 'No', value: 1 %>
+    </div>
+    <!-- end cake drip -->
+    <div class="cake-decoration-color">
+
+      <h2>Cake drip color</h2>
+      <div class="field colors" class="checkbox-inline" id="drip-color">
+        <%= check_box_tag 'order[cake_drip_color][]', 'Teal', @order.cake_drip_color.include?('teal'), class: "teal" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Salmon', @order.cake_drip_color.include?('salmon'), class: "salmon" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Orange', @order.cake_drip_color.include?('orange'), class: "orange" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Orchid', @order.cake_drip_color.include?('orchid'), class: "orchid" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Red', @order.cake_drip_color.include?('red'), class: "red" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Gold', @order.cake_drip_color.include?('gold'), class: "gold" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Purple', @order.cake_drip_color.include?('purple'), class: "purple" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Sky', @order.cake_drip_color.include?('sky'), class: "sky" %>
+        <%= check_box_tag 'order[cake_drip_color][]', 'Baby Pink', @order.cake_drip_color.include?('baby_pink'), class: "baby_pink" %>
+      </div>
+    </div>
     <div class="cake-decoration" id="decoration">
       <h2>Cake decoration</h2>
       <div class="row">
@@ -119,29 +142,7 @@
       </div>
     </div>
     <!-- end cake decoration color -->
-    <div class="cake-drop" id="drip">
-      <h2>Cake drip</h2>
-      <%= f.radio_button :cake_drip, "yes", id: "drip_yes" %>
-      <%= f.label :cake_drip, 'Yes', value: 0 %>
-      <%= f.radio_button :cake_drip, "no", id: "drip_no" %>
-      <%= f.label :cake_drip, 'No', value: 1 %>
-    </div>
-    <!-- end cake drip -->
-    <div class="cake-decoration-color">
 
-      <h2>Cake drip color</h2>
-      <div class="field colors" class="checkbox-inline" id="drip-color">
-        <%= check_box_tag 'order[cake_drip_color][]', 'Teal', @order.cake_drip_color.include?('teal'), class: "teal" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Salmon', @order.cake_drip_color.include?('salmon'), class: "salmon" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Orange', @order.cake_drip_color.include?('orange'), class: "orange" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Orchid', @order.cake_drip_color.include?('orchid'), class: "orchid" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Red', @order.cake_drip_color.include?('red'), class: "red" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Gold', @order.cake_drip_color.include?('gold'), class: "gold" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Purple', @order.cake_drip_color.include?('purple'), class: "purple" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Sky', @order.cake_drip_color.include?('sky'), class: "sky" %>
-        <%= check_box_tag 'order[cake_drip_color][]', 'Baby Pink', @order.cake_drip_color.include?('baby_pink'), class: "baby_pink" %>
-      </div>
-    </div>
     <!-- end cake drip color -->
     <div class="customer-details">
       <h2>Please fill your details</h2>
