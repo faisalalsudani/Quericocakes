@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1> Welcome admin </h1>
 
 <h3> Here are your orders: </h3>
@@ -7,9 +7,8 @@
 
 </div>
 
-
-<%= link_to "Confirmed", { status: "Confirmed", controller: 'orders', action: 'index' } %>
 <%= link_to "Pending", { status: "Pending", controller: 'orders', action: 'index' } %>
+<%= link_to "Confirmed", { status: "Confirmed", controller: 'orders', action: 'index' } %>
 <%= link_to "Finished", { status: "Finished", controller: 'orders', action: 'index' } %>
 <br/>
 
@@ -37,3 +36,4 @@
     <%= order.cake_drip_color %></p>
     <br/>
 <% end %>
+</div>
