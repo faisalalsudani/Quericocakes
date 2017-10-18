@@ -1,42 +1,51 @@
-
 <h1> Welcome admin </h1>
+<br/>
 
-<h3> Here are your orders: </h3>
-
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Order Status
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Pending</a></li>
-    <li><a href="#">Confirmed</a></li>
-    <li><a href="#">Finished</a></li>
-  </ul>
-</div>
+<h2> Orders pending: </h2>
 <br/>
 
 <% @orders.each do |order| %>
-    <h3>Status: <%= order.status %></h3>
 
-    <h4>Name: <%= order.name %></h4>
-    <p>Telephone: <%= order.telephone %>
-    - E-mail: <%= order.email %></p>
-    <p>Remarks: <%= order.remarks %></p>
-    <br/>
-    <h4>Cake details</h4>
-    <p>Size: <%= order.cake_size %> cm</p>
-    <p>Flavor: <%= order.cake_flavor %></p>
-    <p>Filling(s): <%= order.cake_filling %></p>
-    <p>Decoration: <%= order.cake_decoration %>,
-    <%= order.cake_decoration_color %></p>
-    <p>Style: <%= order.cake_style %></p>
-    <p>Drip:
-    <% if order.cake_drip %>
-        <%=  "Yes," %>
-      <% else %>
-        <%= "No" %>
-    <% end %>
-    <%= order.cake_drip_color %></p>
+    <% if order.status == "Order pending" %>
+      <h4>Name: <%= order.name %></h4>
+      <p>Telephone: <%= order.telephone %>
+      - E-mail: <%= order.email %></p>
+      <p>Remarks: <%= order.remarks %></p>
+      <br/>
+      <h4>Cake details</h4>
+      <p>Size: <%= order.cake_size %> cm</p>
+      <p>Flavor: <%= order.cake_flavor %></p>
+      <p>Filling(s): <%= order.cake_filling %></p>
+      <p>Decoration: <%= order.cake_decoration %>,
+      <%= order.cake_decoration_color %></p>
+      <p>Style: <%= order.cake_style %></p>
+      <p>Drip:
+      <% if order.cake_drip %>
+          <%=  "Yes," %>
+        <% else %>
+          <%= "No" %>
+      <% end %>
+      <%= order.cake_drip_color %></p>
+
+      <p> Change the status of this order: </p>
+      <%= form_for order.status do |f| %>
+        <div>
+          <%= f.select :status, [['Pending'],['Confirmed'],['Finished']], {}, class: "form-control", style: "height: 40px"  %>
+        </div>
+        <div>
+          <button class="btn btn-default" type="submit">Save</button>
+        </div>
+      <% end %>
+
+      <% end %>
     <br/>
 <% end %>
+
+<h2> Others Orders: </h2>
+
+<div class="list-group">
+  <h3> List of Orders per Status </h3>
+  <a href="#" class="list-group-item">Confirmed</a>
+  <a href="#" class="list-group-item">Finished</a>
+</div>
+<br/>
