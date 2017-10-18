@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
-
   def index
-    @orders = Order.all
+
+    if params[:status]
+      @status = params[:status]
+      @orders = Order.where(status: @status)
+    else
+      @orders = Order.where(status: "Pending")
+    end
+
   end
 
   def show
