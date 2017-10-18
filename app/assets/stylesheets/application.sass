@@ -245,3 +245,34 @@ footer
   li
     list-style: none
     margin-left: -40px
+
+
+.colors input[type=checkbox]
+  cursor: pointer
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  outline: 0
+
+.colors input[type=checkbox]:focus
+  outline: 0
+
+.colors input[type=checkbox]:after
+  top: -23px
+  left: -16px
+  font-family: 'Arial' !important
+  font-style: normal
+  font-weight: normal
+  font-size: 81px
+  position: relative
+  content: "◻"
+  color: rgba(0, 0, 0, 0.14)
+  display: block
+
+.colors input[type=checkbox]:checked:after
+  background-image: image-url('checked.png')
+  background-repeat: no-repeat
+  color: rgba(0, 0, 0, 0)
+  position: relative
+  top: 0px
+  left: -3px
