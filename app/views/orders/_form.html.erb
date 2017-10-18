@@ -3,6 +3,7 @@
 
   <div id="display_here"></div>
 
+
   <div id="cake_size_display"></div>
   <div class="flex_item_no_border">
     Cake size(cm)
@@ -32,7 +33,7 @@
     <div class="flex_container">
       <div class="flex_item_no_border">
 
-        <div class="flex_container_vertical">
+        <div class="flex_container_vertical" id="flavor">
           <%= f.radio_button :cake_flavor, "vanilla", id: "flavor_1" %>
           <%= f.label :cake_flavor, 'vanilla' %>
           <%= f.radio_button :cake_flavor, "chocolate", id: "flavor_2" %>
@@ -90,7 +91,7 @@
         </div>
 
         <div class="flex_container">
-          <div class="flex_item_no_border">
+          <div class="flex_item_no_border" id="style">
 
             <div class="flex_container_vertical">
               <%= f.radio_button :cake_style, "even", id:"1_style" %>
@@ -111,7 +112,7 @@
           <div class="flex_container">
             <div class="flex_item_no_border">
 
-              <div class="flex_container_vertical">
+              <div class="flex_container_vertical" id="decoration">
                 <%= f.radio_button :cake_decoration, "candy_party", id: "1_decoration" %>
                 <%= f.label :cake_decoration, 'Candy Party' %>
                 <%= f.radio_button :cake_decoration, "fresh_season", id: "2_decoration" %>
@@ -156,7 +157,7 @@
             <div class="flex_item_no_border">
               Cake Drip
             </div>
-
+            <div class="field" class="checkbox-inline" id="drip">
             <%= f.radio_button :cake_drip, "yes", id: "drip_yes" %>
             <%= f.label :cake_drip, 'Yes', value: 0 %>
             <%= f.radio_button :cake_drip, "no", id: "drip_no" %>
@@ -165,7 +166,7 @@
             <div class="flex_item_no_border">
               Cake Drip Color
             </div>
-            <div class="field" class="checkbox-inline" id="drip">
+            <div class="field" class="checkbox-inline" id="drip_color">
               <%= f.check_box :cake_drip_color %>
               <%= f.label :cake_drip_color, class: "teal" %>
               <%= f.check_box :cake_drip_color %>
