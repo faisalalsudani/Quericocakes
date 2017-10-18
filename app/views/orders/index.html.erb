@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1> Welcome admin </h1>
 
 <h3> Here are your orders: </h3>
@@ -7,25 +7,33 @@
 
 </div>
 
-
-<%= link_to "Confirmed", { status: "Confirmed", controller: 'orders', action: 'index' } %>
 <%= link_to "Pending", { status: "Pending", controller: 'orders', action: 'index' } %>
+<%= link_to "Confirmed", { status: "Confirmed", controller: 'orders', action: 'index' } %>
 <%= link_to "Finished", { status: "Finished", controller: 'orders', action: 'index' } %>
 <br/>
 
 <% @orders.each do |order| %>
     <h3>Status: <%= order.status %></h3>
 
-    <h4>Name: <%= order.name %></h4>
-    <p>Telephone: <%= order.telephone %></p>
-    <p>E-mail: <%= order.email %></p>
+   <h4>Name: <%= order.name %></h4>
+    <p>Telephone: <%= order.telephone %>
+    - E-mail: <%= order.email %></p>
     <p>Remarks: <%= order.remarks %></p>
-    <p>Cake size: <%= order.cake_size %> cm</p>
-    <p>Cake flavor: <%= order.cake_flavor %></p>
-    <p>Cake filling: <%= order.cake_filling %></p>
-    <p>Cake decoration: <%= order.cake_decoration %></p>
-    <p>Cake style: <%= order.cake_style %></p>
-    <p>Cake decoration color: <%= order.cake_decoration_color %></p>
-    <p>Cake drip: <%= order.cake_drip %></p>
-    <p>Cake drip color: <%= order.cake_drip_color %></p>
+    <br/>
+    <h4>Cake details</h4>
+    <p>Size: <%= order.cake_size %> cm</p>
+    <p>Flavor: <%= order.cake_flavor %></p>
+    <p>Filling(s): <%= order.cake_filling %></p>
+    <p>Decoration: <%= order.cake_decoration %>,
+    <%= order.cake_decoration_color %></p>
+    <p>Style: <%= order.cake_style %></p>
+    <p>Drip:
+    <% if order.cake_drip %>
+        <%=  "Yes," %>
+      <% else %>
+        <%= "No" %>
+    <% end %>
+    <%= order.cake_drip_color %></p>
+    <br/>
 <% end %>
+</div>
