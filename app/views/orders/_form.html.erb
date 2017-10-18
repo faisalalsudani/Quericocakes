@@ -1,8 +1,7 @@
 <%= form_for @order do |f| %>
-
 <div class="container">
   <div class="col-md-8 cake-builder-form">
-    <div class="cake-size">
+    <div class="cake-size" id="size">
       <h2>Cake size</h2>
       <%= f.radio_button :cake_size, 12.5, id: "size_1"%>
       <%= f.label :cake_size, '12.5'%>
@@ -16,7 +15,7 @@
       <%= f.label :cake_size, '23' %>
     </div>
     <!-- end cake size -->
-    <div class="cake-flavor">
+    <div class="cake-flavor" id="flavor">
       <h2>Cake flavor</h2>
       <%= f.radio_button :cake_flavor, "vanilla", id: "flavor_1" %>
       <%= f.label :cake_flavor, 'vanilla' %>
@@ -26,7 +25,7 @@
       <%= f.label :cake_flavor, 'citroen' %>
     </div>
     <!-- end cake flavor -->
-    <div class="cake-filling">
+    <div class="cake-filling" id="fillings">
       <h2>Cake filling</h2>
       <div class="row">
         <div class="col-md-3">
@@ -68,7 +67,7 @@
       </div>
     </div>
     <!-- end cake filling -->
-    <div class="cake-style">
+    <div class="cake-style" id="style">
       <h2>Cake style</h2>
       <%= f.radio_button :cake_style, "even", id:"1_style" %>
       <%= f.label :cake_style, 'Even'%>
@@ -80,7 +79,7 @@
       <%= f.label :cake_style, 'Naked' %>
     </div>
     <!-- end cake style -->
-    <div class="cake-decoration">
+    <div class="cake-decoration" id="decoration">
       <h2>Cake decoration</h2>
       <div class="row">
         <div class="col-md-6">
@@ -106,7 +105,7 @@
     <!-- end cake decoration -->
     <div class="cake-decoration-color">
       <h2>Decoration colors</h2>
-      <div class="field colors" class="checkbox-inline" id="decoration">
+      <div class="field colors" class="checkbox-inline" id="decoration-color">
         <%= f.check_box :cake_decoration_color, class: "teal" %>
         <%= f.check_box :cake_decoration_color, class: "salmon" %>
         <%= f.check_box :cake_decoration_color, class: "orange" %>
@@ -119,7 +118,7 @@
       </div>
     </div>
     <!-- end cake decoration color -->
-    <div class="cake-drop">
+    <div class="cake-drop" id="drip">
       <h2>Cake drip</h2>
       <%= f.radio_button :cake_drip, "yes", id: "drip_yes" %>
       <%= f.label :cake_drip, 'Yes', value: 0 %>
@@ -129,7 +128,7 @@
     <!-- end cake drip -->
     <div class="cake-decoration-color">
       <h2>Cake drip color</h2>
-      <div class="field colors" class="checkbox-inline" id="drip">
+      <div class="field colors" class="checkbox-inline" id="drip-color">
         <%= f.check_box :cake_drip_color, class: "teal" %>
         <%= f.check_box :cake_drip_color, class: "salmon" %>
         <%= f.check_box :cake_drip_color, class: "orange" %>
@@ -153,7 +152,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="col-md-4 cake-builder-images">
     <div class="affix cake-images">
