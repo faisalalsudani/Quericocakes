@@ -10,30 +10,68 @@
 <%= link_to "Pending", { status: "Pending", controller: 'orders', action: 'index' } %>
 <%= link_to "Confirmed", { status: "Confirmed", controller: 'orders', action: 'index' } %>
 <%= link_to "Finished", { status: "Finished", controller: 'orders', action: 'index' } %>
+<%= link_to "Canceled", { status: "Canceled", controller: 'orders', action: 'index' } %>
+
+<script>
+  function test(id){
+    var display_status = document.getElementById(`order${id}`).style.display;
+    if(display_status == "none"){
+      document.getElementById(`order${id}`).style.display = "block";
+    } else {
+      document.getElementById(`order${id}`).style.display = "none";
+    }
+  }
+
+</script>
 <br/>
 
-<% @orders.each do |order| %>
-    <h3>Status: <%= order.status %></h3>
 
-   <h4>Name: <%= order.name %></h4>
-    <p>Telephone: <%= order.telephone %>
-    - E-mail: <%= order.email %></p>
-    <p>Remarks: <%= order.remarks %></p>
-    <br/>
-    <h4>Cake details</h4>
-    <p>Size: <%= order.cake_size %> cm</p>
-    <p>Flavor: <%= order.cake_flavor %></p>
-    <p>Filling(s): <%= order.cake_filling %></p>
-    <p>Decoration: <%= order.cake_decoration %>,
-    <%= order.cake_decoration_color %></p>
-    <p>Style: <%= order.cake_style %></p>
-    <p>Drip:
-    <% if order.cake_drip %>
-        <%=  "Yes," %>
-      <% else %>
-        <%= "No" %>
+<% @orders.each_with_index do |order, index| %>
+
+<table class="table" style="">
+  <% if index == 0 %>
+    <tr style="background: blue">
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Telephone</th>
+    </tr>
     <% end %>
-    <%= order.cake_drip_color %></p>
-    <br/>
+    <tr style="background: lightgrey" onclick="test(this.id)" id="<%= order.id %>">
+      <td><%= order.id %></td>
+      <td><%= order.name %></td>
+      <td><%= order.email %></td>
+      <td><%= order.telephone %></td>
+    </tr>
+</table>
+    <div id="order<%= order.id %>" style="display: none">
+      <p>Remarks: <%= order.remarks %></p>
+      <br/>
+      <h4>Cake details</h4>
+      <p>Size: <%= order.cake_size %> cm</p>
+      <p>Flavor: <%= order.cake_flavor %></p>
+      <p>Filling(s): <%= order.cake_filling %></p>
+      <p>Decoration: <%= order.cake_decoration %>,
+      <%= order.cake_decoration_color %></p>
+      <p>Style: <%= order.cake_style %></p>
+      <p>Drip:
+      <% if order.cake_drip %>
+          <%=  "Yes," %>
+        <% else %>
+          <%= "No" %>
+      <% end %>
+      <%= order.cake_drip_color %></p>
+      <p> Change the status of this order: </p>
+     <%= form_for Order.find(order.id), {method: :PUT} do |f| %>
+       <div>
+         <%= f.select :status, [['Pending'],['Confirmed'],['Finished'],['Canceled']], {}, class: "form-control", style: "height: 40px"  %>
+       </div>
+       <div>
+         <button class="btn btn-default" type="submit">Save</button>
+       </div>
+     <% end %>
+    </div>
+
 <% end %>
+
 </div>
