@@ -51,13 +51,13 @@
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)}
-    to {-webkit-transform:scale(1)}
+    from {-webkit-transform:scale(1)}
+    to {-webkit-transform:scale(2)}
 }
 
 @keyframes zoom {
-    from {transform:scale(0)}
-    to {transform:scale(1)}
+    from {transform:scale(1)}
+    to {transform:scale(2)}
 }
 
 /* The Close Button */
@@ -149,7 +149,7 @@
               <span class="close" id="<%= photo.id %>" data-modal="<%= photo.id %>" onclick="closeImage(this.getAttribute('data-modal'))">&times;</span>
 
               <!-- <div id="caption"></div> -->
-              <div style="float: left">
+              <div style="float: left; z-index: 20;">
                 <a href="#" class="btn btn-info btn-lg" data-prev="<%= @photo_list[index-1] %>" onclick="nextImage(this.getAttribute('data-prev'))">
                   <span class="glyphicon glyphicon-arrow-left"></span>
                 </a>
@@ -159,13 +159,13 @@
 
 
                 <div style="float: left;" >
-                  <%= image_tag photo.image, class: "modal-content", id: "modal#{photo.id}" %>
+                  <%= image_tag photo.image, class: "modal-content", id: "modal#{photo.id}", style: "transform: scale(2); z-index: 10; max-width: 40vw" %>
                 </div>
 
 
 
               </div>
-              <div style="float: right">
+              <div style="float: right; z-index: 20;">
                 <a href="#" class="btn btn-info btn-lg" data-next="<%= @photo_list[index+1].nil? ? @photo_list[0] : @photo_list[index+1]%>" onclick="nextImage(this.getAttribute('data-next'))">
                   <span class="glyphicon glyphicon-arrow-right"></span>
                 </a>
