@@ -68,40 +68,15 @@
 
 <section class="contact" style="margin-top:50px;">
   <h2>Contact</h2>
-  <form id="contact-form" method="post" action="contact.php" role="form">
-    <div class="messages"></div>
-    <div class="controls">
-        <div class="row">
-          <div class="col-md-4">
-              <div class="form-group">
-                  <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                  <div class="help-block with-errors"></div>
-              </div>
-          </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row sned">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <input type="submit" class="btn btn-send" value="Send message">
-            </div>
-        </div>
+  <div class="customer-details">
+    <%= form_for @contact, url: create_message_url do |f| %>
+    <%= f.text_field :name, placeholder: "Name", class: "form-control" %><br>
+    <%= f.text_field :phone, placeholder: "Mobile number", class: "form-control" %><br>
+    <%= f.text_field :email, placeholder: "E-mail", class: "form-control" %><br>
+    <%= f.text_area :message, placeholder: "Message...", class: "form-control" %><br>
+    <div class:"actions">
+      <%= f.submit "Save", class: "btn btn-block make-cake-btn"%>
     </div>
-</form>
+    <% end %>
+  </div>
 </section>
