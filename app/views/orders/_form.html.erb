@@ -1,4 +1,13 @@
 <%= form_for @order do |f| %>
+
+<% if @order.errors.full_messages.any? %>
+  <% @order.errors.full_messages.each do |error_message| %>
+    <%= error_message %> <br />
+  <% end %>
+<% end %>
+
+<!-- end of error messages -->
+
 <div class="container">
   <div class="col-md-8 cake-builder-form">
     <div class="cake-size" id="size">
