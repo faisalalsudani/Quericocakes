@@ -13,4 +13,28 @@
 <p> 10 meringue seashells = €10.00 </p>
 <p> 20 meringue seashells = €15.00 </p>
 
+<%= form_for @meringue, :url => url_for(:controller => 'otherproducts', :action => 'meringue_create') do |f| %>
+  <div class="container">
+    <div class="customer-details">
+      <h2>Please fill your details and the quantity of Meringue Seashells that you desire</h2>
+
+      <div class="meringue" id="meringue">
+        <h2>Quantity</h2>
+        <%= f.radio_button :meringue, 10, id: "meringue_1"%>
+        <%= f.label :meringue, '10'%>
+        <%= f.radio_button :meringue, 20, id: "meringue_2"%>
+        <%= f.label :meringue, '20' %>
+      </div>
+
+      <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
+      <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
+      <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
+      <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
+      <div class="actions">
+        <%= f.submit "Save", class: "btn btn-block btn-success"%>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
 </div>

@@ -20,7 +20,17 @@ class OtherproductsController < ApplicationController
   end
 
   def meringue
-    @meringue = Order.all
+    @meringue = Order.new
+  end
+
+  def meringue_create
+    @meringue = Order.new(meringue_params.merge(status:"Pending"))
+
+    if @meringue.save
+      redirect_to @meringue
+    else
+      render 'new'
+    end
   end
 
   def cupcakes
@@ -30,6 +40,10 @@ class OtherproductsController < ApplicationController
   private
   def cookies_params
     params.require(:order).permit(:name, :telephone, :email, :remarks, :status, :cookies)
+  end
+
+  def meringue_params
+    params.require(:order).permit(:name, :telephone, :email, :remarks, :status, :meringue)
   end
 
 end
