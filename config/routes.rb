@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :orders
   resources :photos
 
+  get '/otherproducts/cookies', to: 'otherproducts#cookies'
+  get '/otherproducts/cakesicles', to: 'otherproducts#cakesicles'
+  get '/otherproducts/meringue', to: 'otherproducts#meringue'
+  get '/otherproducts/cupcakes', to: 'otherproducts#cupcakes'
 end
