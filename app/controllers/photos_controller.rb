@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    @photo_list = Photo.all.pluck(:id)
     @photo = Photo.new
   end
 

@@ -16,14 +16,17 @@
 
     <div class="container-fluid home-body">
 
+      <% if notice %>
+        <div class="notifications">
+          <div class="alert alert-info" role="alert"><%= notice %></div>
+        </div>
+      <% end %>
+      <% if alert %>
       <div class="notifications">
-        <% if notice %>
-        <div class="alert alert-info" role="alert"><%= notice %></div>
-        <% end %>
-        <% if alert %>
         <div class="alert alert-info" role="alert"><%= alert %></div>
-        <% end %>
       </div>
+      <% end %>
+
 
 
       <%= yield %>
