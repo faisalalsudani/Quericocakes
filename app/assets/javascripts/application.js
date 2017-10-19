@@ -68,9 +68,13 @@ $(document).ready(function() {
   $("#drip").click(function() {
     var cake_drip = $("#drip input:checkbox:checked").length >= 1;
     $("#drip input:checkbox").not(":checked").attr("disabled", cake_drip);
-    var output_size = document.getElementById("display_here");
+
     if ($('#drip_yes').is(':checked')) {
-      output_size.innerHTML = '<img src="https://photo2.foodgawker.com/wp-content/uploads/2017/01/2882116.jpg" width="300" height="300">';
+      $("#cake-drip-color").slideDown('fast')
+      output.innerHTML = '<img src="https://photo2.foodgawker.com/wp-content/uploads/2017/01/2882116.jpg" width="300" height="300">';
+    }
+    else {
+      $("#cake-drip-color").slideUp('fast')
     }
   });
 
