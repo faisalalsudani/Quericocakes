@@ -30,6 +30,17 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params.merge(status:"Pending"))
+    @order.assign_attributes(order_params)
+    @order.cake_size_needs_validation = true
+    @order.cake_flavor_needs_validation = true
+    @order.cake_filling_needs_validation = true
+    @order.cake_style_needs_validation = true
+    @order.cake_drip_needs_validation = true
+    @order.cake_decoration_needs_validation = true
+    @order.cake_decoration_color_needs_validation = true
+    @order.name_needs_validation = true
+    @order.telephone_needs_validation = true
+    @order.email_needs_validation = true
 
     if @order.save
       redirect_to @order
