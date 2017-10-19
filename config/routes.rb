@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :photos
 
   get '/otherproducts/cookies', to: 'otherproducts#cookies'
+  post '/otherproducts/cookies', to: 'otherproducts#cookies_create'
+
   get '/otherproducts/cakesicles', to: 'otherproducts#cakesicles'
   get '/otherproducts/meringue', to: 'otherproducts#meringue'
   get '/otherproducts/cupcakes', to: 'otherproducts#cupcakes'
