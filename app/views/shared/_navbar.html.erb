@@ -1,23 +1,25 @@
-<nav class="navbar navbar-toggleable-md fixed-top">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-custom">
-          <ul>
-            <div class="nav-new">
-              <div class="logo">
-              <a href="#" class="navbar-brand"><img id="logo-navbar-middle" src="<%= image_path('logo.png') %>" width="200" alt="Logo Thing main logo"></a>
-              </div>
-              <a href="/" class="item">BAKERY</a>
-              <a href="/photos" class="item">GALLERY</a>
-              <a href="/orders/new" class="item">BUILD YOUR CAKE</a>
-              <a href="/otherproducts/cookies" class="item">COOKIES</a>
-              <a href="/otherproducts/cakesicles" class="item">CAKESICLES</a>
-              <a href="/otherproducts/meringue" class="item">MERINGUE SEASHELLS</a>
-              <a href="/otherproducts/cupcakes" class="item">CUPCAKES</a>
-            </div>
-        </div>
-      </div>
-    </nav>
+<nav class="navbar navbar-default">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand"><img id="logo-navbar-middle" src="<%= image_path('logo.png') %>" width="200" alt="Logo Thing main logo"></a>
+    </div>
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Bakery</a></li>
+            <li><a href="/photos">Gallery</a></li>
+            <li><a href="/">Cookies</a></li>
+            <li><a href="/">Cookies</a></li>
+            <li><a href="/">Cookies</a></li>
+            <li class="navbar-right build-cake">
+              <a href="/orders/new">Build your cake</a>
+            </li>
+        </ul>
+    </div>
+</nav>

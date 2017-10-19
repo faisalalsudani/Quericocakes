@@ -12,6 +12,72 @@ html, body
   height: 100%
   min-height: 90vh
 
+.navbar-brand
+  margin-top: -25px
+
+  img
+    display: block
+    right: 10px
+    position: relative
+
+.navbar-default
+  background-color: rgba(248, 248, 248, 0)
+  border-color: rgba(248, 248, 248, 0)
+.navbar
+  display: inherit
+  min-height: 150px
+  ul
+    display: inherit
+    background: white
+    height: 50px
+    margin-top: 22px
+    width: 100%
+    border-radius: 5px
+
+    li a
+      color: black
+      font-size: 15px
+      text-transform: uppercase
+
+    li:first-child
+      margin-left: 190px
+
+@media all and (max-width: 800px)
+  .navbar-brand
+    display: none
+
+  #navbarCollapse
+    height: 50vh
+
+  .navbar
+    display: inherit
+    min-height: 50px
+
+    ul
+      display: inherit
+      background: white
+      height: 50vh
+      margin-top: 22px
+      width: 100%
+      border-radius: 5px
+
+      li a
+        color: black
+        font-size: 15px
+        text-transform: uppercase
+
+      li:first-child
+        margin-left: 0px
+
+
+
+.build-cake
+  a
+    color: #cf3b4c !important
+    font-weight: 800
+
+.navbar-right
+  padding-right: 20px
 
 .notifications
   background-image: image-url('Blue_background.jpg')
@@ -31,66 +97,9 @@ html, body
 
 .navbar
   background-image: image-url('Blue_background.jpg')
+  background-repeat: no-repeat
+  background-size: cover
 
-.navbar-brand
-  margin-top: -100px
-
-.nav-new
-  display: flex
-  justify-content: space-around
-  align-items: center
-  background: white
-  margin: 25px 0
-  height: 30px
-  border-radius: 4px
-
-.logo
-  order: 1
-  padding: 24px
-  margin-left: 90px
-
-.item
-  color: #111
-  text-decoration: none
-  font-family: sans-serif
-  padding: 24px
-  &:nth-of-type(n+4)
-    order: 2
-
-@media all and (max-width: 800px)
-  .nav-new
-    flex-direction: column
-    align-items: stretch
-  .logo
-    order: 0
-    text-align: center
-    width: 100px
-    margin: auto auto 20px
-  .item
-    text-align: center
-
-.navbar-collapse
-  text-align: center
-  ul
-    background-color: white
-
-.navbar-collapse
-  ul
-    background: rgba(255, 255, 255, 0)
-
-.navbar-custom
-  display: flex
-  align-items: center
-  justify-content: center
-  padding-top: 30px
-
-  ul
-    margin: 0
-    padding: 0
-    list-style-type: none
-
-    li
-      display: inline
 
 .home-title h2
   text-align: center
