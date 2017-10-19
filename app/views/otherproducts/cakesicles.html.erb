@@ -11,4 +11,28 @@
   <p> 01 cakesicles = €2.00 </p>
   <p> 10 cakesicles = €17.00 </p>
 
+  <%= form_for @cakesicle, :url => url_for(:controller => 'otherproducts', :action => 'cakesicles_create') do |f| %>
+    <div class="container">
+      <div class="customer-details">
+        <h2>Please fill your details and the quantity of cakesicles that you desire</h2>
+
+        <div class="cakesicles" id="cakesicles">
+          <h2>Quantity</h2>
+          <%= f.radio_button :cakesicles, 01, id: "cakesicles_1"%>
+          <%= f.label :cakesicles, '01'%>
+          <%= f.radio_button :cakesicles, 10, id: "cakesicles_2"%>
+          <%= f.label :cakesicles, '10' %>
+        </div>
+
+        <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
+        <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
+        <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
+        <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
+        <div class="actions">
+        <%= f.submit "Send", class: "btn btn-block btn-info"%>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
 </div>

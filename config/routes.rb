@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/otherproducts/cookies', to: 'otherproducts#cookies_create'
 
   get '/otherproducts/cakesicles', to: 'otherproducts#cakesicles'
+  post '/otherproducts/cakesicles', to: 'otherproducts#cakesicles_create'
 
   get '/otherproducts/meringue', to: 'otherproducts#meringue'
   post '/otherproducts/meringue', to: 'otherproducts#meringue_create'
