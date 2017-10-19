@@ -45,6 +45,7 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to @order
     else
+      @order.cake_filling = [:cake_filling]
       render 'new'
     end
 
