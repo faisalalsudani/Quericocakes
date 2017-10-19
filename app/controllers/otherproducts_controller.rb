@@ -11,7 +11,8 @@ class OtherproductsController < ApplicationController
     if @cookie.save
       redirect_to @cookie
     else
-      render 'new'
+      flash[:notice] = "NOT SAVED"
+      render 'cookies'
     end
   end
 
