@@ -5,6 +5,31 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function() {
+
+  $(":checkbox").on("change", function() {
+    var checkboxValues = {};
+    $(":checkbox").each(function() {
+      checkboxValues[this.id] = this.checked;
+    });
+    $.cookie('checkboxValues', checkboxValues, {
+      expires: 7,
+      path: '/'
+    })
+  });
+
+  function repopulateCheckboxes() {
+    var checkboxValues = $.cookie('checkboxValues');
+    if (checkboxValues) {
+      Object.keys(checkboxValues).forEach(function(element) {
+        var checked = checkboxValues[element];
+        $("#" + element).prop('checked', checked);
+      });
+    }
+  }
+
+  $.cookie.json = true;
+  repopulateCheckboxes();
+
   var output = document.getElementById("display_here");
   $("#size").click(function() {
 
@@ -37,14 +62,11 @@ $(document).ready(function() {
   $("#fillings").click(function() {
     var cake_filling = $("#fillings input:checkbox:checked").length >= 2;
     $("#fillings input:checkbox").not(":checked").attr("disabled", cake_filling);
-    var output_fillings = document.getElementById("display_here");
+
     if (document.getElementById('1_filling').checked) {
-      output_fillings.innerHTML = '<img src="https://d1xs5fw35mbn8b.cloudfront.net/p/m/p-half-kg-round-chocolate-cake-with-chocolate-cream-toppings-4780-m.jpg?v=1508202989000" width="300" height="300">';
+      output.innerHTML = '<img src="https://d1xs5fw35mbn8b.cloudfront.net/p/m/p-half-kg-round-chocolate-cake-with-chocolate-cream-toppings-4780-m.jpg?v=1508202989000" width="300" height="300">';
     }
-    if (!document.getElementById('1_filling').checked) {
-      var output = document.getElementById("display_here");
-      output_fillings.innerHTML = " ";
-    }
+
   });
 
 
