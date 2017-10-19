@@ -1,38 +1,45 @@
 <div class="container">
-
-  <h1> Cakesicles </h1>
-
-  <h3> Cake met chocolade dip! </h3>
-
-  <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508405798/cakesicles_x6etq1.jpg' height="250px" >
-
-  <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508405798/cakesicles1_hypjaq.jpg' height="250px" >
-
-  <p> 01 cakesicles = €2.00 </p>
-  <p> 10 cakesicles = €17.00 </p>
-
-  <%= form_for @cakesicle, :url => url_for(:controller => 'otherproducts', :action => 'cakesicles_create') do |f| %>
-    <div class="container">
-      <div class="customer-details">
-        <h2>Please fill your details and the quantity of cakesicles that you desire</h2>
-
-        <div class="cakesicles" id="cakesicles">
-          <h2>Quantity</h2>
-          <%= f.radio_button :cakesicles, 01, id: "cakesicles_1"%>
-          <%= f.label :cakesicles, '01'%>
-          <%= f.radio_button :cakesicles, 10, id: "cakesicles_2"%>
-          <%= f.label :cakesicles, '10' %>
+  <div class="row">
+    <div class="col-md-8">
+      <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508405798/cakesicles_x6etq1.jpg' style="width:100%;height: 280px;object-fit: none;margin-top:13px;">
+      <h2>Cakesicles</h2>
+      <p>Cake met chocolade dip!
+      </p>
+      <div class="row">
+        <div class="col-md-4">
+          <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508405798/cakesicles1_hypjaq.jpg' style="width: 100%;
+    object-fit: contain;">
         </div>
-
-        <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
-        <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
-        <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
-        <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
-        <div class="actions">
-        <%= f.submit "Send", class: "btn btn-block btn-info"%>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
         </div>
       </div>
     </div>
-    <% end %>
+    <div class="col-md-4">
+      <%= form_for @cakesicle, :url => url_for(:controller => 'otherproducts', :action => 'cakesicles_create') do |f| %>
+      <div class="container">
+      <div class="">
 
+      <h4>Please fill your details and the quantity of cookies that you desire</h4>
+      <div class="" id="cookies" style="padding:10px;">
+        <%= f.radio_button :cookies, 10, id: "cakesicles_1"%>
+        <%= f.label :cookies, '1 - €2.00'%><br>
+        <%= f.radio_button :cookies, 20, id: "cakesicles_2"%>
+        <%= f.label :cookies, '10 - €17.00' %><br>
+
+      </div>
+      <br>
+      <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
+      <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
+      <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
+      <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
+      <div class="actions">
+      <%= f.submit "Send", class: "btn btn-block btn-info"%>
+      </div>
+      </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
