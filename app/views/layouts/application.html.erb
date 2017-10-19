@@ -14,14 +14,18 @@
   <body>
     <%= render './shared/navbar' %>
 
-    <div class="container-fluid">
-      <% if notice %>
-      <div class="alert alert-info" role="alert"><%= notice %></div>
-      <% end %>
+    <div class="container-fluid home-body">
 
-      <% if alert %>
-      <div class="alert alert-info" role="alert"><%= alert %></div>
-      <% end %>
+      <div class="notifications">
+        <% if notice %>
+        <div class="alert alert-info" role="alert"><%= notice %></div>
+        <% end %>
+        <% if alert %>
+        <div class="alert alert-info" role="alert"><%= alert %></div>
+        <% end %>
+      </div>
+
+
       <%= yield %>
     </div>
 

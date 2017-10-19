@@ -1,0 +1,11 @@
+<%= form_for @contact, url: create_message_url do |f| %>
+  <%= f.text_field :name, placeholder: 'name' %>
+  <%= f.email_field :email, placeholder: 'email' %>
+  <%= f.text_field :phone, placeholder: 'phone' %>
+  <%= f.text_area :message, placeholder: 'message' %>
+  <%= f.submit 'Send' %>
+<% end %>
+
+
+<%= notice %>
+<%= @contact.errors.full_messages.join(', ') %>
