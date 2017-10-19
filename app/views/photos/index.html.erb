@@ -124,7 +124,12 @@
     // captionText.innerHTML = document.getElementById(id).alt;
   }
   function closeImage(id){
-    document.getElementById(`block${id}`).style.display = "none";
+    if(typeof(id) !== 'number'){
+      var modal = id;
+    } else {
+      var modal = "block" + id;
+    }
+    document.getElementById(modal).style.display = "none";
   }
 
   </script>
@@ -142,7 +147,7 @@
         	     <%= image_tag photo.image, class: "img-responsive img-set", id: photo.id, onclick: "showImage(this.id)", alt: "Image #{photo.id}" %>
 
             </div>
-            <div id="block<%= photo.id %>" class="modal">
+            <div id="block<%= photo.id %>" class="modal" onclick="closeImage(this.id)">
               <span class="close" id="<%= photo.id %>" onclick="closeImage(this.id)">&times;</span>
               <%= image_tag photo.image, class: "modal-content", id: "modal#{photo.id}" %>
               <!-- <div id="caption"></div> -->
