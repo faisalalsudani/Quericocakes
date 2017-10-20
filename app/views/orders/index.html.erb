@@ -104,6 +104,7 @@
    var current_url = window.location.href
    var url = new URL(current_url);
    var status = url.searchParams.get("status");
+   if(!status){ status = "Pending" }
    var url = "/orders?type=" + $(this).val() + "&status=" + status;
     if (url) {
         window.location.replace(url);

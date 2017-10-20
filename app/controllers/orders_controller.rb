@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
+
   def index
+
     @orders = Order.where(status: "Pending")
     if(params[:status] || params[:type])
       @status = params[:status] unless !params[:status]
