@@ -1,18 +1,27 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.where(status: "Pending")
-    if params[:status]
-      flash[:notice] = "status"
-      @status = params[:status]
-      @orders = Order.where(status: @status)
+    if(params[:status] || params[:type])
+
+
+      @status = params[:status] unless !params[:status]
+      params[:type] ? @type = params[:type] : @type = "none"
+      @type = "cake_size" if @type == "cakes"
+
+      if @type != "none"
+        @orders = Order.where(status: @status).where.not(@type => nil)
+      else
+        @orders = Order.where(status: @status)
+      end
+
     end
 
-    if params[:type]
-      flash[:notice] = params[:type]
+    # if params[:type]
+    #   flash[:notice] = params[:type]
+    #   @type = params[:type]
 
-      @type = params[:type]
-      @orders = Order.where(@type => nil)
-    end
+    #   @orders = Order.where.not(@type => nil)
+    # end
 
   end
 

@@ -7,28 +7,23 @@
 
     <ul class="nav nav-tabs"  role="tablist">
       <li class="nav-item <%= 'active' if params[:status] == 'Pending' %>">
-        <%= link_to "Pending", { status: "Pending", controller: 'orders', action: 'index' } %>
+        <%= link_to "Pending", { status: "Pending", type: @type, controller: 'orders', action: 'index' } %>
       </li>
       <li class="nav-item <%= 'active' if params[:status] == 'Confirmed' %>">
-        <%= link_to "Confirmed", { status: "Confirmed", controller: 'orders', action: 'index' } %>
+        <%= link_to "Confirmed", { status: "Confirmed", type: @type, controller: 'orders', action: 'index' } %>
       </li>
       <li class="nav-item <%= 'active' if params[:status] == 'Finished' %>">
-        <%= link_to "Finished", { status: "Finished", controller: 'orders', action: 'index' } %>
+        <%= link_to "Finished", { status: "Finished", type: @type, controller: 'orders', action: 'index' } %>
       </li>
       <li class="nav-item <%= 'active' if params[:status] == 'Canceled' %>">
-        <%= link_to "Canceled", { status: "Canceled", controller: 'orders', action: 'index' } %>
+        <%= link_to "Canceled", { status: "Canceled", type: @type,controller: 'orders', action: 'index' } %>
       </li>
       <li>
-        <% @type_list = ["cookies", "cakesicles", "meringue"] %>
-        <%= select_tag "type", options_for_select(@type_list), id: "hoi" %>
 
-        <%#= select_tag :type, [['cookies'],['cakesicles'],['meringue'], {}, class: "form-control", style: "height: 40px; width: 200px; margin-right: 20px;"  %>
-      </li>
-      <li>
-        <%#= link_to "Cakesicles", { type: "cakesicles", controller: 'orders', action: 'index' } %>
-      </li>
-      <li>
-        <%#= link_to "Meringue Seashells", { type: "meringue", controller: 'orders', action: 'index' } %>
+          <% @type_list = ["Filter", "none", "cakes", "cookies", "cakesicles", "meringue"] %>
+          <%= select_tag "type", options_for_select(@type_list), id: "type_list", class: "form-control", style: "height: 40px;" %>
+
+
       </li>
     </ul>
     <!-- Tab panes -->
@@ -50,7 +45,7 @@
               <td style="width:30%;"><%= order.name %></td>
               <td style="width:30%;"><%= order.email %></td>
               <td style="width:20%;"><%= order.telephone %></td>
-              <td style="width:10%;"><i class="<%= 'fa fa-birthday-cake' unless !order.cake_size %>"></i></td>
+              <td style="width:10%;"><i class="<%= order.cake_size ? 'fa fa-birthday-cake' : 'fa fa-tags' %>"></i></td>
             </tr>
         </table>
             <div id="order<%= order.id %>" style="display: none">
@@ -73,10 +68,20 @@
                     <%=  "Yes," %>
                   <% else %>
                     <%= "No" %>
+
                 <% end %>
                 <%= order.cake_drip_color[0] %></p>
               <% else %>
-                <p><span style="font-weight:700;">Cookies:</span><%= order.cookies %></p>
+                <% if order.cookies %>
+                  <p><span style="font-weight:700;">Cookies:</span><%= order.cookies %></p>
+                <% end %>
+                <% if order.cakesicles %>
+                  <p><span style="font-weight:700;">Cakesicles:</span><%= order.cakesicles %></p>
+                <% end %>
+                <% if order.meringue %>
+                  <p><span style="font-weight:700;">Meringue:</span><%= order.meringue %></p>
+                <% end %>
+
               <% end %>
               <p> Change the status of this order: </p>
              <%= form_for Order.find(order.id), {method: :PUT} do |f| %>
@@ -89,25 +94,28 @@
         <% end %>
       </div>
     </div>
-      <script>
-        $(function(){
-        $('#hoi').bind('change', function () {
-         var url = "/orders?type=" + $(this).val()
-          if (url) {
-              window.location.replace(url);
-          }
-          return false;
-          });
-        });
-        function test(id){
-          var display_status = document.getElementById(`order${id}`).style.display;
-          if(display_status == "none"){
-            document.getElementById(`order${id}`).style.display = "block";
-          } else {
-            document.getElementById(`order${id}`).style.display = "none";
-          }
-        }
-      </script>
+    <script>
+  $(function(){
+  $('#type_list').bind('change', function () {
+   var current_url = window.location.href
+   var url = new URL(current_url);
+   var status = url.searchParams.get("status");
+   var url = "/orders?type=" + $(this).val() + "&status=" + status;
+    if (url) {
+        window.location.replace(url);
+    }
+    return false;
+    });
+  });
+  function test(id){
+    var display_status = document.getElementById(`order${id}`).style.display;
+    if(display_status == "none"){
+      document.getElementById(`order${id}`).style.display = "block";
+    } else {
+      document.getElementById(`order${id}`).style.display = "none";
+    }
+  }
+</script>
 
 
 </div>
