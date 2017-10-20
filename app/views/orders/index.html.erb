@@ -20,8 +20,11 @@
       </li>
       <li>
 
-          <% @type_list = ["Filter", "none", "cakes", "cookies", "cakesicles", "meringue"] %>
-          <%= select_tag "type", options_for_select(@type_list), id: "type_list", class: "form-control", style: "height: 40px;" %>
+          <% @type_list = ["none", "cakes", "cookies", "cakesicles", "meringue"] %>
+          <% if @type == "cake_size"%>
+          <% @type = "cakes" %>
+          <% end %>
+          <%= select_tag "type", options_for_select(@type_list, @type), id: "type_list", class: "form-control", style: "height: 40px;" %>
 
 
       </li>
