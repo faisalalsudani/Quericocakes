@@ -3,41 +3,42 @@
     <div class="col-md-8">
       <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508405440/meringueall_jropt2.jpg' style="width:100%;height: 280px;object-fit: none;margin-top:13px;">
       <h2>Meringue Seashells</h2>
-      <p>Verbaas uw gasten met deze Meringue Seashell gevuld met chocolade ganache en zwarte bes parel!
+      <p>Verbaas uw gasten met deze Meringue Seashell gevuld met chocolade ganache en zwarte bes parel!</p>
+      <p>
+        Surprise your guests with this Meringue Seashell filled with chocolate ganache and a blackberry jam pearl!
       </p>
+
       <div class="row">
         <div class="col-md-4">
           <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508405440/meringue_dyn6fu.jpg' style="width: 100%;
     object-fit: contain;">
         </div>
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
-        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
       </div>
     </div>
     <div class="col-md-4">
       <%= form_for @meringue, :url => url_for(:controller => 'otherproducts', :action => 'meringue_create') do |f| %>
       <div class="container">
-      <div class="">
+        <div class="">
 
-      <h4>Please fill your details and the quantity of cookies that you desire</h4>
-      <div class="" id="cookies" style="padding:10px;">
-        <%= f.radio_button :cookies, 10, id: "cakesicles_1"%>
-        <%= f.label :cookies, '10 - €10.00'%><br>
-        <%= f.radio_button :cookies, 20, id: "cakesicles_2"%>
-        <%= f.label :cookies, '20 - €15.00' %><br>
+          <h4>Please fill your details and the quantity of cookies that you desire</h4>
+          <div class="" id="cookies" style="padding:10px;">
+            <%= f.radio_button :cookies, 10, id: "cakesicles_1"%>
+            <%= f.label :cookies, '10 - €10.00'%><br>
+            <%= f.radio_button :cookies, 20, id: "cakesicles_2"%>
+            <%= f.label :cookies, '20 - €15.00' %><br>
 
-      </div>
-      <br>
-      <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
-      <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
-      <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
-      <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
-      <div class="actions">
-      <%= f.submit "Send", class: "btn btn-block btn-info"%>
-      </div>
-      </div>
+          </div>
+          <br>
+          <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
+          <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
+          <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
+          <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
+          <div class="actions">
+            <%= f.submit "Send", class: "btn btn-block make-cake-btn"%>
+          </div>
+        </div>
       </div>
       <% end %>
     </div>
