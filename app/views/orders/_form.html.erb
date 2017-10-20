@@ -3,34 +3,54 @@
 <div class="container">
   <div class="col-md-8 cake-builder-form">
     <div class="cake-size" id="size">
-      <h2>Cake size</h2>
+      <h2>Cake Servings</h2>
+
       <% if @order.errors.full_messages_for(:cake_size).any? %>
-        <% @order.errors.full_messages_for(:cake_size).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_size).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
       <% end %>
-      <%= f.radio_button :cake_size, 12.5, id: "size_1"%>
-      <%= f.label :cake_size, '12.5'%>
-      <%= f.radio_button :cake_size, 15, id: "size_2"%>
-      <%= f.label :cake_size, '15' %>
-      <%= f.radio_button :cake_size, 18, id: "size_3" %>
-      <%= f.label :cake_size, '18' %>
-      <%= f.radio_button :cake_size, 20, id: "size_4" %>
-      <%= f.label :cake_size, '20' %>
-      <%= f.radio_button :cake_size, 23, id: "size_5" %>
-      <%= f.label :cake_size, '23' %>
+      <% end %>
+      <div class="row">
+        <h4>Single Tier Cake</h4>
+        <div class="col-md-6">
+          <%= f.radio_button :cake_size, 6, id: "size_1"%>
+          <%= f.label :cake_size, '6'%>
+          <%= f.radio_button :cake_size, 10, id: "size_2"%>
+          <%= f.label :cake_size, '10' %>
+          <%= f.radio_button :cake_size, 14, id: "size_3" %>
+          <%= f.label :cake_size, '14' %>
+          <%= f.radio_button :cake_size, 18, id: "size_4" %>
+          <%= f.label :cake_size, '18' %>
+          <%= f.radio_button :cake_size, 20, id: "size_5" %>
+          <%= f.label :cake_size, '20' %>
+
+        </div >
+        <h4>Multi Tier Cake</h4>
+        <div class="col-md-6">
+          <%= f.radio_button :cake_size, 20, id: "size_6"%>
+          <%= f.label :cake_size, '20'%>
+          <%= f.radio_button :cake_size, 28, id: "size_7"%>
+          <%= f.label :cake_size, '28' %>
+          <%= f.radio_button :cake_size, 30, id: "size_8" %>
+          <%= f.label :cake_size, '30' %>
+          <%= f.radio_button :cake_size, 34, id: "size_9" %>
+          <%= f.label :cake_size, '34' %>
+          <%= f.radio_button :cake_size, 40, id: "size_10" %>
+          <%= f.label :cake_size, '40' %>
+        </div >
+      </div >
     </div>
     <!-- end cake size -->
     <div class="cake-flavor" id="flavor">
       <h2>Cake flavor</h2>
       <% if @order.errors.full_messages_for(:cake_flavor).any? %>
-        <% @order.errors.full_messages_for(:cake_flavor).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_flavor).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <%= f.radio_button :cake_flavor, "vanilla", id: "flavor_1" %>
       <%= f.label :cake_flavor, 'vanilla' %>
@@ -43,11 +63,11 @@
     <div class="cake-filling" id="fillings">
       <h2>Cake filling</h2>
       <% if @order.errors.full_messages_for(:cake_filling).any? %>
-        <% @order.errors.full_messages_for(:cake_filling).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_filling).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <div class="row">
         <div class="col-md-3">
@@ -92,11 +112,11 @@
     <div class="cake-style" id="style">
       <h2>Cake style</h2>
       <% if @order.errors.full_messages_for(:cake_style).any? %>
-        <% @order.errors.full_messages_for(:cake_style).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_style).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <%= f.radio_button :cake_style, "even", id:"1_style" %>
       <%= f.label :cake_style, 'Even'%>
@@ -111,11 +131,11 @@
     <div class="cake-drop" id="drip">
       <h2>Cake drip</h2>
       <% if @order.errors.full_messages_for(:cake_drip).any? %>
-        <% @order.errors.full_messages_for(:cake_drip).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_drip).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <%= f.radio_button :cake_drip, "yes", id: "drip_yes" %>
       <%= f.label :cake_drip, 'Yes', value: 0 %>
@@ -127,11 +147,11 @@
 
       <h2>Cake drip color</h2>
       <% if @order.errors.full_messages_for(:cake_drip_color).any? %>
-        <% @order.errors.full_messages_for(:cake_drip_color).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_drip_color).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <div class="field colors" class="checkbox-inline" id="drip-color">
         <%= check_box_tag 'order[cake_drip_color][]', 'Teal', @order.cake_drip_color.include?('Teal'), class: "teal" %>
@@ -148,11 +168,11 @@
     <div class="cake-decoration" id="decoration">
       <h2>Cake decoration</h2>
       <% if @order.errors.full_messages_for(:cake_decoration).any? %>
-        <% @order.errors.full_messages_for(:cake_decoration).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_decoration).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <div class="row">
         <div class="col-md-6">
@@ -180,11 +200,11 @@
     <div class="cake-decoration-color">
       <h2>Decoration colors</h2>
       <% if @order.errors.full_messages_for(:cake_decoration_color).any? %>
-        <% @order.errors.full_messages_for(:cake_decoration_color).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:cake_decoration_color).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <div class="field colors" class="checkbox-inline" id="decoration-color">
         <%= check_box_tag 'order[cake_decoration_color][]', 'Teal', @order.cake_decoration_color.include?('Teal'), class: "teal" %>
@@ -205,35 +225,35 @@
       <h2>Please fill your details</h2>
       <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
       <% if @order.errors.full_messages_for(:name).any? %>
-        <% @order.errors.full_messages_for(:name).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:name).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
       <% if @order.errors.full_messages_for(:telephone).any? %>
-        <% @order.errors.full_messages_for(:telephone).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:telephone).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
       <% if @order.errors.full_messages_for(:email).any? %>
-        <% @order.errors.full_messages_for(:email).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:email).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
       <% if @order.errors.full_messages_for(:remarks).any? %>
-        <% @order.errors.full_messages_for(:remarks).each do |msg| %>
-        <div class="alert alert-danger" role="alert">
-            <p><%= msg %></p>
-        </div>
-        <% end %>
+      <% @order.errors.full_messages_for(:remarks).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
       <% end %>
       <div class:"actions">
         <%= f.submit "Save", class: "btn btn-block btn-success"%>
