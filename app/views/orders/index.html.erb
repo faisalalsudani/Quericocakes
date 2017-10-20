@@ -87,6 +87,7 @@
              <%= form_for Order.find(order.id), {method: :PUT} do |f| %>
                <div id="order-status-inline">
                  <%= f.select :status, [['Pending'],['Confirmed'],['Finished'],['Canceled']], {}, class: "form-control", style: "height: 40px; width: 200px; margin-right: 20px;"  %>
+                <%= hidden_field_tag 'type', @type  %>
                 <button class="btn btn-default" type="submit">Save</button>
                </div>
              <% end %>
