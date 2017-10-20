@@ -28,44 +28,105 @@ $(document).ready(function() {
       output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.17_a5jo38.png" width="300" height="300">';
     } else if ($('#size_9').is(':checked')) {
       output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.46_da13ep.png" width="300" height="300">';
-    } else {
+    } else if ($('#size_10').is(':checked')){
       output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.52_mbqe3i.png" width="300" height="300">';
     }
   });
 
 
-  $("#flavor").click(function() {
 
+  $("#flavor").click(function() {
     if ($('#flavor_1').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-tmb/T3EFKFK5Z-F7KBXRMCG-e4ac96db72/vanilla1_360.png" width="300" height="300">';
+      output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492116/cake_holder_yi9roh.png" width="300" height="300">';
     } else if ($('#flavour_2').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-tmb/T3EFKFK5Z-F7L391P2Q-7b60122a35/chocolate1_360.png" width="300" height="300">';
-    } else {
-      output.innerHTML = '<img src="https://files.slack.com/files-tmb/T3EFKFK5Z-F7L5T0JLD-1a90b1ce61/citroen1_360.png" width="300" height="300">';
+      output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492116/cake_holder_yi9roh.png" width="300" height="300">';
+    } else if ($('#flavour_3').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492116/cake_holder_yi9roh.png" width="300" height="300">';
     }
   });
+
 
 
   $("#fillings").click(function() {
     var cake_filling = $("#fillings input:checkbox:checked").length >= 2;
     $("#fillings input:checkbox").not(":checked").attr("disabled", cake_filling);
-
-    if (document.getElementById('1_filling').checked) {
-      output.innerHTML = '<img src="https://d1xs5fw35mbn8b.cloudfront.net/p/m/p-half-kg-round-chocolate-cake-with-chocolate-cream-toppings-4780-m.jpg?v=1508202989000" width="300" height="300">';
-    }
-
+    output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492116/cake_holder_yi9roh.png" width="300" height="300">';
   });
 
 
-  $("#decoration").click(function() {
+ $("#style").click(function() {
+   if ($('#1_style').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492116/even_wju7jv.png" width="300" height="300">';
+    }else if ($('#2_style').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492114/marbel_jdarvx.png" width="300" height="300">';
+    }else if ($('#3_style').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492114/ombre_huzw6l.png" width="300" height="300">';
+    }else if ($('#4_style').is(':checked')) {
+        output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492115/naked_icpzms.png" width="300" height="300">';
+    }
+  });
 
-    var output = document.getElementById("display_here");
+
+
+  $("#drip").click(function() {
+    var cake_drip = $("#drip input:checkbox:checked").length >= 1;
+      $("#drip input:checkbox").not(":checked").attr("disabled", cake_drip);
+    if ($('#drip_yes').is(':checked')) {
+        $("#cake-drip-color").slideDown('fast')
+        if ($('#2_style').is(':checked')) {
+          output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492115/marbel_drip_pjntxy.png" width="300" height="300">';
+        }
+        if ($('#4_style').is(':checked')) {
+          output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492115/naked_drip_ghknid.png" width="300" height="300">';
+        }
+      } else {
+        $("#cake-drip-color").slideUp('fast')
+      }
+    });
+
+
+
+ $("#decoration").click(function() {
     if ($('#1_decoration').is(':checked')) {
-      output.innerHTML = '<img src="https://assets.marthastewart.com/styles/video-preview-1280x720-highdpi/d33/marble_vanilla_and_chocolate_cake/marble_vanilla_and_chocolate_cake_horiz.jpg?itok=PH5pmQ11" width="300" height="300">';
-    }
-    if ($('#6_decoration').is(':checked')) {
-      output.innerHTML = '<img src="https://static1.squarespace.com/static/53214b7ee4b0f7c737c34999/57031dc640261d8834a90436/58eb2978d482e94e7f4203df/1491806864256/Unicorn-Cake-W-Small.jpg" width="300" height="300">';
-    }
+      if(($('#2_style').is(':checked'))){
+        if($('#drip_yes').is(':checked')){
+          output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492115/marbel_drip_candy_lavp3s.png" width="300" height="300">';
+         }
+        }
+      }
+
+      if ($('#1_decoration').is(':checked')) {
+        if(($('#4_style').is(':checked'))){
+          if($('#drip_yes').is(':checked')){
+            output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508494349/naked_drip_candy_party_ow3js5.png" width="300" height="300">';
+           }
+          }
+        }
+
+        if ($('#3_decoration').is(':checked')) {
+          if(($('#4_style').is(':checked'))){
+            if($('#drip_yes').is(':checked')){
+              output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508494447/naked_drip_flower_lmc5ro.png" width="300" height="300">';
+             }
+            }
+          }
+
+
+          if ($('#5_decoration').is(':checked')) {
+            if(($('#2_style').is(':checked'))){
+              if($('#drip_yes').is(':checked')){
+                output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492116/Candy_party_drip_sn1frj.png" width="300" height="300">';
+               }
+              }
+            }
+
+            if ($('#2_decoration').is(':checked')) {
+              if(($('#2_style').is(':checked'))){
+                if($('#drip_yes').is(':checked')){
+                  output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492116/Candy_party_drip_sn1frj.png" width="300" height="300">';
+                 }
+                }
+              }
   });
 
   $("#decoration-color").click(function() {
@@ -74,22 +135,9 @@ $(document).ready(function() {
   });
 
 
-  $("#drip").click(function() {
-    var cake_drip = $("#drip input:checkbox:checked").length >= 1;
-    $("#drip input:checkbox").not(":checked").attr("disabled", cake_drip);
-
-    if ($('#drip_yes').is(':checked')) {
-      $("#cake-drip-color").slideDown('fast')
-      output.innerHTML = '<img src="https://photo2.foodgawker.com/wp-content/uploads/2017/01/2882116.jpg" width="300" height="300">';
-    } else {
-      $("#cake-drip-color").slideUp('fast')
-    }
-  });
-
   $("#drip-color").click(function() {
     var cake_drip = $("#drip-color input:checkbox:checked").length >= 1;
     $("#drip-color input:checkbox").not(":checked").attr("disabled", cake_drip);
   });
-
 
 });
