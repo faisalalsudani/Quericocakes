@@ -11,15 +11,25 @@ $(document).ready(function() {
   $("#size").click(function() {
 
     if ($('#size_1').is(':checked')) {
-      output.innerHTML = '<img src="https://i.pinimg.com/736x/81/ed/ed/81eded5fd277769d81b9ec178c53fe7c--cake-serving-chart-cake-serving-guide.jpg" width="300" height="300">';
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.26_poqbag.png" width="300" height="300">';
     } else if ($('#size_2').is(':checked')) {
-      output.innerHTML = '<img src="https://i.pinimg.com/736x/81/ed/ed/81eded5fd277769d81b9ec178c53fe7c--cake-serving-chart-cake-serving-guide.jpg" width="300" height="300">';
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488634/Screen_Shot_2017-10-19_at_16.56.29_mfotxa.png" width="300" height="300">';
     } else if ($('#size_3').is(':checked')) {
-      output.innerHTML = '<img src="https://i.pinimg.com/736x/81/ed/ed/81eded5fd277769d81b9ec178c53fe7c--cake-serving-chart-cake-serving-guide.jpg" width="300" height="300">';
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.32_xhvrne.png" width="300" height="300">';
     } else if ($('#size_4').is(':checked')) {
-      output.innerHTML = '<img src="https://i.pinimg.com/736x/81/ed/ed/81eded5fd277769d81b9ec178c53fe7c--cake-serving-chart-cake-serving-guide.jpg" width="300" height="300">';
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.52_ydjvjc.png" width="300" height="300">';
+    } else if ($('#size_5').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.58_jdbkbr.png" width="300" height="300">';
+    } else if ($('#size_6').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.04_eu9qyw.png" width="300" height="300">';
+    } else if ($('#size_7').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.08_jixrrg.png" width="300" height="300">';
+    } else if ($('#size_8').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.17_a5jo38.png" width="300" height="300">';
+    } else if ($('#size_9').is(':checked')) {
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.46_da13ep.png" width="300" height="300">';
     } else {
-      output.innerHTML = '<img src="https://i.pinimg.com/736x/81/ed/ed/81eded5fd277769d81b9ec178c53fe7c--cake-serving-chart-cake-serving-guide.jpg" width="300" height="300">';
+      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.52_mbqe3i.png" width="300" height="300">';
     }
   });
 
@@ -71,8 +81,7 @@ $(document).ready(function() {
     if ($('#drip_yes').is(':checked')) {
       $("#cake-drip-color").slideDown('fast')
       output.innerHTML = '<img src="https://photo2.foodgawker.com/wp-content/uploads/2017/01/2882116.jpg" width="300" height="300">';
-    }
-    else {
+    } else {
       $("#cake-drip-color").slideUp('fast')
     }
   });
