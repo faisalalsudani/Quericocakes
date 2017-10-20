@@ -198,23 +198,9 @@
 
         <div class="modal jumbotron align-items-center" id="block<%= post.id %>" data-modal="<%= post.id %>" onclick="closeNews(this.getAttribute('data-modal'))">
               <div class="news" id="news<%= post.id %>">
-                  <iframe id="iframe<%= post.id %>" src="http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/" style="height: 100%; width: 100%;"></iframe>
+                  <iframe id="iframe<%= post.id %>" src="<%= post.content %>" style="height: 100%; width: 100%;"></iframe>
               </div>
         </div>
-
-
-
-      <div class="col-md-4">
-        <div class="post">
-          <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap" style="width:100%; height:200px;">
-          <h4 class="card-title">
-            <%= post.title %>
-            <span>
-              <a href="#">Read more ...</a>
-            </span>
-          </h4>
-        </div>
-      </div>
 
       <% end %>
     </div>
