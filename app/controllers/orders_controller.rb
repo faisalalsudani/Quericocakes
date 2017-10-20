@@ -2,8 +2,6 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.where(status: "Pending")
     if(params[:status] || params[:type])
-
-
       @status = params[:status] unless !params[:status]
       params[:type] ? @type = params[:type] : @type = "none"
       @type = "cake_size" if @type == "cakes"
@@ -15,14 +13,6 @@ class OrdersController < ApplicationController
       end
 
     end
-
-    # if params[:type]
-    #   flash[:notice] = params[:type]
-    #   @type = params[:type]
-
-    #   @orders = Order.where.not(@type => nil)
-    # end
-
   end
 
   def show
@@ -37,8 +27,10 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @status = params[:order][:status]
 
+    params[:type].present? ? @type = params[:type] : @type = "none"
+
     if(@order.update_attributes(order_params))
-      redirect_to orders_path(status: @status)
+      redirect_to orders_path(status: @status, type: @type)
     end
 
   end
