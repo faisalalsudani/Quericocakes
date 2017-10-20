@@ -117,19 +117,21 @@
 
 
 <section class="top-image">
-<div class="container-fluid index">
-  <div class="row">
-    <div class="home-title" style="width:100%;">
-      <h2 style="text-align: center; color:black;">Homemade cakes</h2>
-    </div>
-    <div class="cake-index" style="width:100%;">
-      <%= image_tag("cake.png") %> <br>
-      <a href="/orders/new"><button class="btn make-cake-btn">MAKE YOUR OWN CAKE</button></a>
+  <div class="container-fluid index">
+    <div class="row">
+      <div class="home-title" style="width:100%;">
+        <h2 style="text-align: center; color:black;">Homemade cakes</h2>
+      </div>
+      <div class="cake-index" style="width:100%;">
+        <%= image_tag("cake.png") %>
+        <br>
+        <a href="/orders/new">
+          <button class="btn make-cake-btn">BUILD YOUR OWN CAKE</button>
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </section>
-
 
 <!-- Bad example -->
 <!-- <section class="featured">
@@ -170,10 +172,6 @@
     document.getElementById(`block${id}`).classList.add('d-flex');
   }
 
-  // function closeIframe(id) {
-  //   window.parent.closeNews(id);
-  // }
-
   function closeNews(id){
     document.getElementById(`news${id}`).style.display = "none";
     document.getElementById(`block${id}`).classList.remove('d-flex');
@@ -187,6 +185,7 @@
   <div class="container">
     <div class="row">
       <% @posts.each do |post| %>
+
         <div class="col-md-4">
           <div class="post">
             <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap" style="width:100%; height:200px;">
@@ -204,13 +203,26 @@
         </div>
 
 
+
+      <div class="col-md-4">
+        <div class="post">
+          <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap" style="width:100%; height:200px;">
+          <h4 class="card-title">
+            <%= post.title %>
+            <span>
+              <a href="#">Read more ...</a>
+            </span>
+          </h4>
+        </div>
+      </div>
+
       <% end %>
     </div>
   </div>
-    <hr>
+  <hr>
 </section>
 
-<section class="contact" style="margin-top:50px;">
+<section class="contact" style="margin-top:50px;" id="contact">
   <h2>Contact</h2>
   <div class="customer-details">
     <%= form_for @contact, url: create_message_url do |f| %>
@@ -219,7 +231,7 @@
     <%= f.text_field :email, placeholder: "E-mail", class: "form-control" %><br>
     <%= f.text_area :message, placeholder: "Message...", class: "form-control" %><br>
     <div class:"actions">
-      <%= f.submit "Save", class: "btn btn-block make-cake-btn"%>
+      <%= f.submit "Send", class: "btn btn-block make-cake-btn"%>
     </div>
     <% end %>
   </div>
