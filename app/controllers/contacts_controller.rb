@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
       ContactMailer.contact_me(@contact).deliver_now
       redirect_to root_path, notice: "Message received"
     else
-      render :new
+      redirect_to root_path, alert: "Please check all fields!"
     end
   end
 
