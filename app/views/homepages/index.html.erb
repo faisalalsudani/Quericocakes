@@ -189,7 +189,7 @@
       <% @posts.each do |post| %>
         <div class="col-md-4">
           <div class="post">
-            <img class="card-img-top" src="<%= post.picture %>" alt="Card image cap" style="width:100%; height:200px;">
+            <img class="card-img-top" src="<%= post.content %>" alt="Card image cap" style="width:100%; height:200px;">
             <h4 class="card-title">
               <%= post.title %>
               <span id="<%= post.id %>" onclick="showNews(this.id)">Read more ...</span>
@@ -202,8 +202,6 @@
                   <iframe id="iframe<%= post.id %>" src="http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/" style="height: 100%; width: 100%;"></iframe>
               </div>
         </div>
-
-
       <% end %>
     </div>
   </div>
