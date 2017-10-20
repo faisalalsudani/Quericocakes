@@ -3,18 +3,30 @@
     <div class="col-md-8">
       <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508403699/cookies_lyaour.jpg' style="width:100%;height: 280px;object-fit: none;margin-top:13px;">
       <h2>Lolly Cookies</h2>
-      <p>Vermaak uw gasten met deze leuke en smakelijke Lolly Cookies!<br>
-        Dit is een originele traktatie voor op school of verjaardagen!<br><br>
-        Deze cookies zijn met rietsuiker, natuurlijke smaakstoffen en chia zaden
-      </p>
+      <div>
+        <p>Vermaak uw gasten met deze leuke en smakelijke Lolly Cookies!<br>
+          Dit is een originele traktatie voor op school of verjaardagen!<br><br>
+          Deze cookies zijn met rietsuiker, natuurlijke smaakstoffen en chia zaden
+        </p>
+      </div>
+
+      <div>
+        <p>Entertain your guests with these nice and tasty Lolly Cookies!
+          <br>
+          This is an original treat for school or birthdays!
+          <br>
+          <br>
+          These cookies are made with unprocessed cane sugar, natural flavors and chia seeds.
+        </p>
+      </div>
       <div class="row">
         <div class="col-md-4">
           <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508403699/cookie1_es3tdk.jpg' style="width: 100%;
-    object-fit: contain;" >
+    object-fit: contain;">
         </div>
         <div class="col-md-4">
           <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508403699/cookie2_xdwkn4.jpg' style="width: 100%;
-    object-fit: contain;" >
+    object-fit: contain;">
         </div>
         <div class="col-md-4">
           <img src='http://res.cloudinary.com/djxmmaqyo/image/upload/v1508403699/cookie3jpg_nuru8p.jpg' style="width: 100%;
@@ -25,27 +37,27 @@
     <div class="col-md-4">
       <%= form_for @cookie, :url => url_for(:controller => 'otherproducts', :action => 'cookies_create') do |f| %>
       <div class="container">
-      <div class="">
+        <div class="">
 
-      <h4>Please fill your details and the quantity of cookies that you desire</h4>
-      <div class="" id="cookies" style="padding:10px;">
-        <%= f.radio_button :cookies, 10, id: "cookies_1"%>
-        <%= f.label :cookies, '10 - €10.00'%><br>
-        <%= f.radio_button :cookies, 20, id: "cookies_2"%>
-        <%= f.label :cookies, '20 - €15.00' %><br>
-        <%= f.radio_button :cookies, 30, id: "cookies_3" %>
-        <%= f.label :cookies, '30 - €20.00' %>
+          <h4>Please fill your details and the quantity of cookies that you desire</h4>
+          <div class="" id="cookies" style="padding:10px;">
+            <%= f.radio_button :cookies, 10, id: "cookies_1"%>
+            <%= f.label :cookies, '10 - €10.00'%><br>
+            <%= f.radio_button :cookies, 20, id: "cookies_2"%>
+            <%= f.label :cookies, '20 - €15.00' %><br>
+            <%= f.radio_button :cookies, 30, id: "cookies_3" %>
+            <%= f.label :cookies, '30 - €20.00' %>
 
-      </div>
-      <br>
-      <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
-      <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
-      <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
-      <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
-      <div class="actions">
-      <%= f.submit "Send", class: "btn btn-block btn-info"%>
-      </div>
-      </div>
+          </div>
+          <br>
+          <%= f.text_field :name, placeholder: "Enter your name", class: "form-control" %><br>
+          <%= f.text_field :telephone, placeholder: "Enter your mobile", class: "form-control" %><br>
+          <%= f.text_field :email, placeholder: "Enter your e-mail", class: "form-control" %><br>
+          <%= f.text_area :remarks, placeholder: "Enter remarks...", class: "form-control" %><br>
+          <div class="actions">
+            <%= f.submit "Send", class: "btn btn-block make-cake-btn"%>
+          </div>
+        </div>
       </div>
       <% end %>
     </div>
