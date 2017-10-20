@@ -20,6 +20,9 @@
             <li><a href="/otherproducts/cupcakes">Cupcakes</a></li>
             <!-- <li><a href="/orders/new">Build your cake</a></li> -->
             <li><a href="/#contact">Contact</a></li>
+            <% if user_signed_in? %>
+            <li><a href="/posts/new">Add new post</a></li>
+            <% end %>
             <li class="navbar-right build-cake">
               <a href="/orders/new">
                 <button class="btn navbar-make-cake">Build your cake</button>
