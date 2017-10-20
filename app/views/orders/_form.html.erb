@@ -74,7 +74,7 @@
         <br>
       </div>
       <h2>Cake filling</h2>
-      <p style="text-align: center;">(Select 2)</p>
+      <p style="text-align: center;">(Select up to 2)</p>
       <% if @order.errors.full_messages_for(:cake_filling).any? %>
       <% @order.errors.full_messages_for(:cake_filling).each do |msg| %>
       <div class="alert alert-danger" role="alert">
@@ -163,7 +163,7 @@
     <div class="cake-decoration-color" id="cake-drip-color">
 
       <h2>Cake drip color</h2>
-      <p>(Select 2)</p>
+      <p>(Select 1)</p>
       <% if @order.errors.full_messages_for(:cake_drip_color).any? %>
       <% @order.errors.full_messages_for(:cake_drip_color).each do |msg| %>
       <div class="alert alert-danger" role="alert">
@@ -221,7 +221,7 @@
 
     <div class="cake-decoration-color">
       <h2>Decoration colors</h2>
-      <p>(Select 1)</p>
+      <p>(Select up to 2)</p>
       <% if @order.errors.full_messages_for(:cake_decoration_color).any? %>
       <% @order.errors.full_messages_for(:cake_decoration_color).each do |msg| %>
       <div class="alert alert-danger" role="alert">
