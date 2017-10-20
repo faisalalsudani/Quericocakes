@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "shared/_footer.html.erb" do
   before { sign_in user }
 
-  context "shows all items from navbar" do
+  context "shows all items from footer" do
     let(:user) { create :user }
 
     it "Que Rico Cakes" do
@@ -13,7 +13,7 @@ describe "shared/_footer.html.erb" do
 
     it "Adress" do
       render
-      expect(rendered).to have_content "Ladogameer 83"
+      expect(rendered).to have_content "Ladogameer 83 Woerden 3446 JA"
     end
 
     it "Telephone" do

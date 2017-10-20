@@ -79,7 +79,7 @@ $(document).ready(function() {
         if ($('#4_style').is(':checked')) {
           output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508492115/naked_drip_ghknid.png" width="300" height="300">';
         }
-      } else {
+      } else if ($('#drip_no').is(':checked')){
         $("#cake-drip-color").slideUp('fast')
       }
     });
@@ -87,6 +87,12 @@ $(document).ready(function() {
 
 
  $("#decoration").click(function() {
+
+   if ($('#7_decoration').is(':checked')) {
+     debugger;
+     output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508500087/3_wyihte.png" width="300" height="300">';
+   }
+
     if ($('#1_decoration').is(':checked')) {
       if(($('#2_style').is(':checked'))){
         if($('#drip_yes').is(':checked')){
@@ -119,6 +125,38 @@ $(document).ready(function() {
                }
               }
             }
+
+            if ($('#3_decoration').is(':checked')) {
+              if(($('#4_style').is(':checked'))){
+                if($('#drip_yes').is(':checked')){
+                  output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508500023/1_c2lldp.png" width="300" height="300">';
+                 }
+                }
+              }
+
+              if ($('#1_decoration').is(':checked')) {
+                if(($('#1_style').is(':checked'))){
+                  if($('#drip_yes').is(':checked')){
+                    output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508500082/2_ql6tpr.png" width="300" height="300">';
+                   }
+                  }
+                }
+
+
+
+                if ($('#4_decoration').is(':checked')) {
+                  if(($('#1_style').is(':checked'))){
+                  output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508500092/4_aodfxe.png" width="300" height="300">';
+                }
+              }
+
+              if ($('#6_decoration').is(':checked')) {
+                if(($('#3_style').is(':checked'))){
+                output.innerHTML = '<img src="http://res.cloudinary.com/dvmfuraf4/image/upload/v1508500096/unicorn_xegwie.png" width="300" height="300">';
+              }
+            }
+
+
 
             if ($('#2_decoration').is(':checked')) {
               if(($('#2_style').is(':checked'))){
