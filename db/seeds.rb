@@ -15,9 +15,9 @@ order3 = Order.create!( { status:"Finished", name: "Serene", telephone:"98065432
 order4 = Order.create!( { status:"Pending", name: "Matthijs", telephone:"980654321", email:"matthijs@gmail.com", remarks:"I want more onions", cake_size:18, cake_flavor:"Chocolate", cake_filling:"Strawberry Mousse", cake_decoration:"Baby Shower", cake_style:"Ombre", cake_decoration_color:"blue", cake_drip:false, cake_drip_color:"" } )
 order5 = Order.create!( { status:"Canceled", name: "Faisal", telephone:"980654321", email:"faisal@gmail.com", remarks:"I want bacon", cake_size:18, cake_flavor:"Chocolate", cake_filling:"Strawberry Mousse", cake_decoration:"Baby Shower", cake_style:"Ombre", cake_decoration_color:"blue", cake_drip:false, cake_drip_color:"" } )
 
-post1 = Post.create!({ title: "test1", content: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
-post2 = Post.create!({ title: "test2", content: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
-post3 = Post.create!({ title: "test3", content: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
+post1 = Post.create!({ title: "test1", content: "http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/", picture: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
+post2 = Post.create!({ title: "test2", content: "http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/", picture: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
+post3 = Post.create!({ title: "test3", content: "http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/", picture: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
 
 
 photo1 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226760/cake1_yjslto.jpg" } )
