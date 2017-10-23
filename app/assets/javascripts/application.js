@@ -11,6 +11,7 @@ $(document).ready(function() {
   $("#size").click(function() {
 
     if ($('#size_1').is(':checked')) {
+      console.log('test');
       output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.26_poqbag.png" width="300" height="300">';
     } else if ($('#size_2').is(':checked')) {
       output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488634/Screen_Shot_2017-10-19_at_16.56.29_mfotxa.png" width="300" height="300">';
