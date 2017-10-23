@@ -189,6 +189,7 @@
         <br>
       </div>
       <h2>Cake decoration</h2>
+      <p style="text-align: center;">(Select up to 2)</p>
       <% if @order.errors.full_messages_for(:cake_decoration).any? %>
       <% @order.errors.full_messages_for(:cake_decoration).each do |msg| %>
       <div class="alert alert-danger" role="alert">
@@ -198,22 +199,23 @@
       <% end %>
       <div class="row">
         <div class="col-md-6">
-          <%= f.radio_button :cake_decoration, "candy_party", id: "1_decoration" %>
+          <%= check_box_tag 'order[cake_decoration][]', 'CandyParty', @order.cake_decoration.include?('CandyParty'), id:"1_decoration" %>
           <%= f.label :cake_decoration, 'Candy Party' %><br>
-          <%= f.radio_button :cake_decoration, "fresh_season", id: "2_decoration" %>
+          <%= check_box_tag 'order[cake_decoration][]', 'FreshSeasonFruit', @order.cake_decoration.include?('FreshSeasonFruit'), id:"2_decoration" %>
           <%= f.label :cake_decoration, 'Fresh Season Fruit' %><br>
-          <%= f.radio_button :cake_decoration, "fresh_flowers", id: "3_decoration" %>
-          <%= f.label :cake_decoration, 'Fresh Flowers' %><br>
-          <%= f.radio_button :cake_decoration, "baby_shower", id: "4_decoration" %>
-          <%= f.label :cake_decoration, 'Baby Shower' %>
+          <%= check_box_tag 'order[cake_decoration][]', 'FreshFlower', @order.cake_decoration.include?('FreshFlower'), id:"3_decoration" %>
+          <%= f.label :cake_decoration, 'Fresh Flower' %><br>
+          <%= check_box_tag 'order[cake_decoration][]', 'BabyShower', @order.cake_decoration.include?('BabyShower'), id:"4_decoration" %>
+          <%= f.label :cake_decoration, 'Baby Shower' %><br>
         </div>
         <div class="col-md-6">
-          <%= f.radio_button :cake_decoration, "gender_reveal", id: "5_decoration" %>
+          <%= check_box_tag 'order[cake_decoration][]', 'GenderReveal', @order.cake_decoration.include?('GenderReveal'), id:"5_decoration" %>
           <%= f.label :cake_decoration, 'Gender Reveal' %><br>
-          <%= f.radio_button :cake_decoration, "unicorn", id: "6_decoration" %>
+          <%= check_box_tag 'order[cake_decoration][]', 'Unicorn', @order.cake_decoration.include?('Unicorn'), id:"6_decoration" %>
           <%= f.label :cake_decoration, 'Unicorn' %><br>
-          <%= f.radio_button :cake_decoration, "flamingo", id: "7_decoration" %>
+          <%= check_box_tag 'order[cake_decoration][]', 'Flamingo', @order.cake_decoration.include?('Flamingo'), id:"7_decoration" %>
           <%= f.label :cake_decoration, 'Flamingo' %><br>
+
         </div>
       </div>
     </div>
