@@ -2,10 +2,11 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index]
 
   def index
-    @orders = Order.where(status: "Pending").order(created_at: :asc)
-    if(params[:status] || params[:type])
-      @status = params[:status] unless !params[:status]
-      params[:date] ? @order_date = params[:date] : @order_date = "asc"
+    params[:date] ? @order_date = params[:date] : @order_date = "asc"
+    @orders = Order.where(status: "Pending").order(created_at: @order_date)
+    if(params[:status] || params[:type] || params[:date])
+
+      params[:status] ? @status = params[:status] : @status = "pending"
       params[:type] ? @type = params[:type] : @type = "none"
       @type = "cake_size" if @type == "cakes"
 
