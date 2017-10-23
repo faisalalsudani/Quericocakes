@@ -108,8 +108,8 @@
                       <td>Decoration color</td>
                       <% if(order.cake_decoration_color.present?) %>
                         <td>
-                          <%= order.cake_decoration_color.each do |decoration| %>
-                            <%= decoration %>
+                          <% order.cake_decoration_color.each do |color| %>
+                            <%= color %>
                           <% end %>
                         </td>
                       <% else %>
