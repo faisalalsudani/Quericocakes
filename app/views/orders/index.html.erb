@@ -41,8 +41,8 @@
                 <th style="width:5%;">Type</th>
               </tr>
             <% end %>
-            <tr onclick="test(this.id)" id="<%= order.id %>" style="cursor:pointer; <%= "background: lightgrey" unless index % 2 == 0 %>">
-              <td style="width:5%;"><%= order.id %></td>
+            <tr onclick="test(this.getAttribute('data-order'))" id="row<%= order.id %>" data-order="<%= order.id %>" style="cursor:pointer; <%= "color: yellow" if @order_id %> ;<%= "background: lightgrey" unless index % 2 == 0 %>">
+              <td style="width:5%;" id="<%= order.id %>" ><%= order.id %></td>
               <td style="width:30%;"><%= order.name %></td>
               <td style="width:30%;"><%= order.email %></td>
               <td style="width:20%;"><%= order.telephone %></td>
@@ -124,6 +124,32 @@
                       <td>Drip</td>
                       <td><%= order.cake_drip ? "Yes" : "No" %></td>
                     </tr>
+
+                    <tr>
+                        <td>Drip color</td>
+                        <% if order.cake_drip_color.present? %>
+                        <td>
+                          <% order.cake_drip_color.each do |color| %>
+                            <%= color %>
+                          <% end %>
+                        </td>
+                        <% else %>
+                          <td style="color: red;">No drip color specified</td>
+                        <% end %>
+                    </tr>
+                    <tr>
+                        <td>Cake topping(s)</td>
+                        <% if order.cake_toppings.present? %>
+                        <td>
+                          <% order.cake_toppings.each do |topping| %>
+                            <%= topping %>
+                          <% end %>
+                        </td>
+                        <% else %>
+                          <td style="color: red;">No topping specified</td>
+                        <% end %>
+                    </tr>
+
                   </table>
                 </div>
               <% else %>
@@ -181,6 +207,7 @@
     });
   });
   function test(id){
+
     var display_status = document.getElementById(`order${id}`).style.display;
     if(display_status == "none"){
       document.getElementById(`order${id}`).style.display = "block";
