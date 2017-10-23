@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023074541) do
+ActiveRecord::Schema.define(version: 20171023133458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171023074541) do
     t.integer "cakesicles"
     t.integer "meringue"
     t.integer "cupcakes"
+    t.string "cake_toppings", default: [], array: true
   end
 
   create_table "photos", force: :cascade do |t|
