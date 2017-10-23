@@ -108,19 +108,30 @@
           <%= f.label :cake_filling, 'Strawberry Jam'%><br>
           <%= check_box_tag 'order[cake_filling][]', 'BlueberryJam', @order.cake_filling.include?('BlueberryJam'), id:"10_filling" %>
           <%= f.label :cake_filling, 'Blueberry Jam' %><br>
-          <%= check_box_tag 'order[cake_filling][]', 'OreosCookies', @order.cake_filling.include?('OreosCookies'), id:"11_filling" %>
-          <%= f.label :cake_filling, 'Oreos Cookies' %><br>
-          <%= check_box_tag 'order[cake_filling][]', 'Walnuts', @order.cake_filling.include?('Walnuts'), id:"12_filling" %>
-          <%= f.label :cake_filling, 'Walnuts' %>
         </div>
-        <div class="col-md-3">
-          <%= check_box_tag 'order[cake_filling][]', 'Almonds', @order.cake_filling.include?('Almonds'), id:"13_filling" %>
-          <%= f.label :cake_filling, 'Almonds' %><br>
-          <%= check_box_tag 'order[cake_filling][]', 'Apricots', @order.cake_filling.include?('Apricots'), id:"14_filling" %>
-          <%= f.label :cake_filling, 'Apricots' %><br>
-        </div>
+
       </div>
     </div>
+
+    <div class="cake-toppings">
+      <h2>Cake Toppings</h2>
+      <% if @order.errors.full_messages_for(:cake_filling).any? %>
+      <% @order.errors.full_messages_for(:cake_filling).each do |msg| %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= msg %></p>
+      </div>
+      <% end %>
+      <% end %>
+      <%= f.radio_button :cake_filling, "OreosCookies", id:"11_filling" %>
+      <%= f.label :cake_filling, 'Oreo Cookies'%>
+      <%= f.radio_button :cake_filling, "Walnuts", id:"12_filling" %>
+      <%= f.label :cake_filling, 'Walnuts'%>
+      <%= f.radio_button :cake_filling, "Almonds", id:"13_filling" %>
+      <%= f.label :cake_filling, 'Almonds' %>
+      <%= f.radio_button :cake_filling, "Apricots", id:"14_filling" %>
+      <%= f.label :cake_filling, 'Apricots' %>
+    </div>
+
     <!-- end cake filling -->
     <div class="cake-style" id="style">
       <div class="step4">
