@@ -85,7 +85,7 @@
                       <% if(order.cake_filling.present?) %>
                         <td>
                           <% order.cake_filling.each do |filling| %>
-                            <%= filling.to_s.humanize %>
+                            <%= filling.to_s.humanize %>,
                           <% end %>
                         </td>
                         <% else %>
@@ -97,7 +97,7 @@
                         <% if(order.cake_decoration.present?) %>
                           <td>
                             <% order.cake_decoration.each do |decoration| %>
-                              <%= decoration.to_s.humanize %>
+                              <%= decoration.humanize %>,
                             <% end %>
                           </td>
                         <% else %>
@@ -109,7 +109,7 @@
                       <% if(order.cake_decoration_color.present?) %>
                         <td>
                           <% order.cake_decoration_color.each do |color| %>
-                            <%= color.to_s.humanize %>
+                            <%= color.humanize %>,
                           <% end %>
                         </td>
                       <% else %>
@@ -130,7 +130,7 @@
                         <% if order.cake_drip_color.present? %>
                         <td>
                           <% order.cake_drip_color.each do |color| %>
-                            <%= color.humanize %>
+                            <%= color.humanize %>,
                           <% end %>
                         </td>
                         <% else %>
