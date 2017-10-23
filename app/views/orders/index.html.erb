@@ -4,7 +4,6 @@
 <h3>Here are your orders:</h3>
 <!-- Nav tabs -->
 
-
     <ul class="nav nav-tabs"  role="tablist">
       <li class="nav-item <%= 'active' if params[:status] == 'Pending' %>">
         <%= link_to "Pending", { status: "Pending", type: @type, controller: 'orders', action: 'index' } %>
@@ -43,7 +42,7 @@
                 <th style="width:10%;">Type</th>
               </tr>
             <% end %>
-            <tr onclick="test(this.id)" id="<%= order.id %>" style="<%= "background: lightgrey" unless index % 2 == 0 %>">
+            <tr onclick="test(this.id)" id="<%= order.id %>" style="cursor:pointer; <%= "background: lightgrey" unless index % 2 == 0 %>">
               <td style="width:10%;"><%= order.id %></td>
               <td style="width:30%;"><%= order.name %></td>
               <td style="width:30%;"><%= order.email %></td>
@@ -51,13 +50,17 @@
               <td style="width:10%;"><i class="<%= order.cake_size ? 'fa fa-birthday-cake' : 'fa fa-tags' %>"></i></td>
             </tr>
         </table>
-            <div id="order<%= order.id %>" style="display: none; margin-top: 10px;">
+            <div id="order<%= order.id %>" style="display: none; margin-top: 10px;" class="order_information">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <strong>Remark of <%= order.name %></strong> <span class="text-muted"></span>
+                  <strong>Remark of <%= order.name %></strong>
                 </div>
                 <div class="panel-body">
+                  <% if(order.remarks.present?) %>
                   <%= order.remarks %>
+                  <% else %>
+                  <span style="color: red;">No remarks</span>
+                  <% end %>
                 </div>
               </div>
               <br/>
@@ -79,17 +82,39 @@
                     </tr>
                     <tr>
                       <td>Filling(s)</td>
-                      <% if(order.cake_filling) %>
-                        <% order.cake_filling.each do |f| %>
-                          <td><%= f %></td>
-                        <% end %>
+                      <% if(order.cake_filling.present?) %>
+                        <td>
+                          <% order.cake_filling.each do |filling| %>
+                            <%= filling %>
+                          <% end %>
+                        </td>
+                        <% else %>
+                        <td style="color: red;">No filling specified</td>
                       <% end %>
-                      <td>No filling specified</td>
                     </tr>
                     <tr>
-                      <td>Decoration</td>
-                      <td><% order.cake_decoration.each do |decoration| %><%= decoration %><% end %>
-                        <%= order.cake_decoration_color unless !order.cake_decoration_color.present? %></td>
+                      <td>Decoration type</td>
+                        <% if(order.cake_decoration.present?) %>
+                          <td>
+                            <% order.cake_decoration.each do |decoration| %>
+                              <%= decoration %>
+                            <% end %>
+                          </td>
+                        <% else %>
+                          <td style="color: red;">No decoration type specified</td>
+                        <% end %>
+                    </tr>
+                    <tr>
+                      <td>Decoration color</td>
+                      <% if(order.cake_decoration_color.present?) %>
+                        <td>
+                          <%= order.cake_decoration_color.each do |decoration| %>
+                            <%= decoration %>
+                          <% end %>
+                        </td>
+                      <% else %>
+                        <td style="color: red;">No decoration color specified</td>
+                      <% end %>
                     </tr>
                     <tr>
                       <td>Style</td>
@@ -102,27 +127,43 @@
                   </table>
                 </div>
               <% else %>
-                <% if order.cookies %>
-                  <p><span style="font-weight:700;">Cookies:</span><%= order.cookies %></p>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <strong>Details</strong>
+                </div>
+                <table class="table" style="width: 30%">
+                <% if order.cookies.present? %>
+                  <tr>
+                    <td><span style="font-weight:700;">Cookies:</span></td>
+                    <td><%= order.cookies %></td>
+                  </tr>
                 <% end %>
-                <% if order.cakesicles %>
-                  <p><span style="font-weight:700;">Cakesicles:</span><%= order.cakesicles %></p>
+                <% if order.cakesicles.present? %>
+                  <tr>
+                    <td><span style="font-weight:700;">Cakesicles:</span></td>
+                    <td><%= order.cakesicles %></td>
+                  </tr>
                 <% end %>
-                <% if order.meringue %>
-                  <p><span style="font-weight:700;">Meringue:</span><%= order.meringue %></p>
+                <% if order.meringue.present? %>
+                  <tr>
+                    <td><span style="font-weight:700;">Meringue:</span></td>
+                    <td><%= order.meringue %></td>
+                  </tr>
                 <% end %>
+                </table>
+              </div>
               <% end %>
-              <p> Change the status of this order: </p>
-             <%= form_for Order.find(order.id), {method: :PUT} do |f| %>
-               <div id="order-status-inline">
-                 <%= f.select :status, [['Pending'],['Confirmed'],['Finished'],['Canceled']], {}, class: "form-control", style: "height: 40px; width: 200px; margin-right: 20px;"  %>
-                <%= hidden_field_tag 'type', @type  %>
-                <button class="btn btn-default" type="submit">Save</button>
-               </div>
-             </div>
-             <% end %>
+                Change the status of this order:
+               <%= form_for Order.find(order.id), {method: :PUT} do |f| %>
+                 <div id="order-status-inline">
+                   <%= f.select :status, [['Pending'],['Confirmed'],['Finished'],['Canceled']], {}, class: "form-control", style: "height: 40px; width: 200px; margin-right: 20px;"  %>
+                  <%= hidden_field_tag 'type', @type  %>
+                  <button class="btn btn-default" type="submit">Save</button>
+                 </div>
+                <% end %>
             </div>
         <% end %>
+
       </div>
     </div>
     <script>
