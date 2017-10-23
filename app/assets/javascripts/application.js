@@ -87,6 +87,8 @@ $(document).ready(function() {
 
 
  $("#decoration").click(function() {
+   var cake_decoration = $("#decoration input:checkbox:checked").length >= 2;
+   $("#decoration input:checkbox").not(":checked").attr("disabled", cake_decoration);
 
    if ($('#7_decoration').is(':checked')) {
      debugger;
