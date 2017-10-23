@@ -12,25 +12,25 @@ $(document).ready(function() {
 
     if ($('#size_1').is(':checked')) {
       console.log('test');
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.26_poqbag.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MKHBAQG/1.png" width="300">';
     } else if ($('#size_2').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488634/Screen_Shot_2017-10-19_at_16.56.29_mfotxa.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7NDDCJ7P/2.png" width="300">';
     } else if ($('#size_3').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.32_xhvrne.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99J3NW/3.png" width="300">';
     } else if ($('#size_4').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.52_ydjvjc.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MPGCYM7/4.png" width="300">';
     } else if ($('#size_5').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.56.58_jdbkbr.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7NAUND6Y/5.png" width="300">';
     } else if ($('#size_6').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.04_eu9qyw.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MKHEF16/6.png" width="300">';
     } else if ($('#size_7').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.08_jixrrg.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99MLD8/7.png" width="300">';
     } else if ($('#size_8').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.17_a5jo38.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7PBTLNTH/8.png" width="300">';
     } else if ($('#size_9').is(':checked')) {
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.46_da13ep.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99NXL2/9.png" width="300">';
     } else if ($('#size_10').is(':checked')){
-      output.innerHTML = '<img src="http://res.cloudinary.com/deborahjoshi/image/upload/v1508488633/Screen_Shot_2017-10-19_at_16.57.52_mbqe3i.png" width="300" height="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7P5WJYVC/10.png" width="300">';
     }
   });
 
