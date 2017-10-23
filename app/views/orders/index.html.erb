@@ -86,7 +86,8 @@
                     </tr>
                     <tr>
                       <td>Decoration</td>
-                      <td><%= order.cake_decoration.humanize %> <%= order.cake_decoration_color unless !order.cake_decoration_color.present? %></td>
+                      <td><% order.cake_decoration.each do |decoration| %><%= decoration %><% end %>
+                        <%= order.cake_decoration_color unless !order.cake_decoration_color.present? %></td>
                     </tr>
                     <tr>
                       <td>Style</td>
@@ -108,7 +109,6 @@
                 <% if order.meringue %>
                   <p><span style="font-weight:700;">Meringue:</span><%= order.meringue %></p>
                 <% end %>
-
               <% end %>
               <p> Change the status of this order: </p>
              <%= form_for Order.find(order.id), {method: :PUT} do |f| %>
