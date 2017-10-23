@@ -18,12 +18,12 @@ describe "shared/_footer.html.erb" do
 
     it "Telephone" do
       render
-      expect(rendered).to have_content "06 38 05 95 77"
+      expect(rendered).to have_content "06 38059577"
     end
 
     it "Email" do
       render
-      expect(rendered).to have_content "info@quericocakes.nl"
+      expect(rendered).to have_content "quericowoerden@gmail.com"
     end
   end
 end

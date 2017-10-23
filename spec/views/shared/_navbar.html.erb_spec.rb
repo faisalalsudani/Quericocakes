@@ -37,9 +37,5 @@ describe "shared/_navbar.html.erb" do
       expect(rendered).to have_content "Cupcakes"
     end
 
-    it "Build your cake" do
-      render
-      expect(rendered).to have_content "Build your cake"
-    end
   end
 end
