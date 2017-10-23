@@ -62,6 +62,8 @@
               </div>
               <br/>
               <% if order.cake_size %>
+
+                
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <strong>Cake details</strong> <span class="text-muted"></span>
@@ -86,7 +88,12 @@
                     </tr>
                     <tr>
                       <td>Decoration</td>
-                      <td><%= order.cake_decoration.humanize %> <%= order.cake_decoration_color unless !order.cake_decoration_color.present? %></td>
+                        <% if(order.cake_decoration) %>
+                        <% order.cake_decoration.each do |f| %>
+                          <td><%= f %></td>
+                        <% end %>
+                      <% end %>
+                      <td>No decoration specified</td>
                     </tr>
                     <tr>
                       <td>Style</td>
