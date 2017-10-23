@@ -193,6 +193,10 @@
               <%= post.title %>
               <span id="<%= post.id %>" onclick="showNews(this.id)">Read more ...</span>
             </h4>
+
+            <% if user_signed_in? %>
+              <button type="button" class="btn btn-danger" style="float: right; width: 100%">Delete</button>
+            <% end %>
           </div>
         </div>
 
