@@ -18,14 +18,11 @@
         <%= link_to "Canceled", { status: "Canceled", type: @type,controller: 'orders', action: 'index' } %>
       </li>
       <li>
-
           <% @type_list = ["none", "cakes", "cookies", "cakesicles", "meringue"] %>
           <% if @type == "cake_size"%>
           <% @type = "cakes" %>
           <% end %>
           <%= select_tag "type", options_for_select(@type_list, @type), id: "type_list", class: "form-control", style: "height: 40px;" %>
-
-
       </li>
     </ul>
     <!-- Tab panes -->
@@ -35,19 +32,22 @@
         <table class="table">
             <% if index == 0 %>
               <tr style="background: #6cb5a9; color:white;">
-                <th style="width:10%;">#</th>
+                <th style="width:5%;">#</th>
                 <th style="width:30%;">Name</th>
                 <th style="width:30%;">Email</th>
                 <th style="width:20%;">Telephone</th>
-                <th style="width:10%;">Type</th>
+                <th style="width:10%"><%= link_to "Date", { status: @status, date: @order_date == "asc" ? "desc" : "asc",
+                  type: @type, controller: 'orders', action: 'index' }, style: "color: white" %></th>
+                <th style="width:5%;">Type</th>
               </tr>
             <% end %>
             <tr onclick="test(this.id)" id="<%= order.id %>" style="cursor:pointer; <%= "background: lightgrey" unless index % 2 == 0 %>">
-              <td style="width:10%;"><%= order.id %></td>
+              <td style="width:5%;"><%= order.id %></td>
               <td style="width:30%;"><%= order.name %></td>
               <td style="width:30%;"><%= order.email %></td>
               <td style="width:20%;"><%= order.telephone %></td>
-              <td style="width:10%;"><i class="<%= order.cake_size ? 'fa fa-birthday-cake' : 'fa fa-tags' %>"></i></td>
+              <td style="width:10%;"><%= order.created_at.strftime("%Y-%m-%d") %></td>
+              <td style="width:5%;"><i class="<%= order.cake_size ? 'fa fa-birthday-cake' : 'fa fa-tags' %>"></i></td>
             </tr>
         </table>
             <div id="order<%= order.id %>" style="display: none; margin-top: 10px;" class="order_information">
@@ -66,7 +66,7 @@
               <br/>
               <% if order.cake_size %>
 
-                
+
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <strong>Cake details</strong> <span class="text-muted"></span>
