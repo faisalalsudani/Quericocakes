@@ -77,17 +77,39 @@
                     </tr>
                     <tr>
                       <td>Filling(s)</td>
-                      <% if(order.cake_filling) %>
-                        <% order.cake_filling.each do |f| %>
-                          <td><%= f %></td>
-                        <% end %>
+                      <% if(order.cake_filling.present?) %>
+                        <td>
+                          <% order.cake_filling.each do |filling| %>
+                            <%= filling %>
+                          <% end %>
+                        </td>
+                        <% else %>
+                        <td style="color: red;">No filling specified</td>
                       <% end %>
-                      <td>No filling specified</td>
                     </tr>
                     <tr>
-                      <td>Decoration</td>
-                      <td><% order.cake_decoration.each do |decoration| %><%= decoration %><% end %>
-                        <%= order.cake_decoration_color unless !order.cake_decoration_color.present? %></td>
+                      <td>Decoration type</td>
+                        <% if(order.cake_decoration.present?) %>
+                          <td>
+                            <% order.cake_decoration.each do |decoration| %>
+                              <%= decoration %>
+                            <% end %>
+                          </td>
+                        <% else %>
+                          <td style="color: red;">No decoration type specified</td>
+                        <% end %>
+                    </tr>
+                    <tr>
+                      <td>Decoration color</td>
+                      <% if(order.cake_decoration_color.present?) %>
+                        <td>
+                          <%= order.cake_decoration_color.each do |decoration| %>
+                            <%= decoration %>
+                          <% end %>
+                        </td>
+                      <% else %>
+                        <td style="color: red;">No decoration color specified</td>
+                      <% end %>
                     </tr>
                     <tr>
                       <td>Style</td>
