@@ -52,6 +52,7 @@ class OrdersController < ApplicationController
     @order.name_needs_validation = true
     @order.telephone_needs_validation = true
     @order.email_needs_validation = true
+    @order.cake_toppings_needs_validation = true
 
     if @order.save
       redirect_to @order
