@@ -139,7 +139,7 @@
                     </tr>
                     <tr>
                         <td>Cake topping</td>
-                        <td><%= order.cake_toppings.humanize unless order.cake_toppings == "{}" %></td>
+                        <td><%= order.cake_toppings.humanize unless !order.cake_toppings %></td>
                     </tr>
 
                   </table>
