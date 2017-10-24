@@ -25,22 +25,8 @@ order13 = Order.create!( { status:"Pending", name: "Core", telephone:"980654321"
 order14 = Order.create!( { status:"Confirmed", name: "Fab", telephone:"980654321", email:"d@gmail.com", remarks:"", cakesicles:1 } )
 order15 = Order.create!( { status:"Canceled", name: "Elen", telephone:"980654321", email:"e@gmail.com", remarks:"whohol", cakesicles:10 } )
 
-post1 = Post.create!({ title: "test1", content: "http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/", picture: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
-post2 = Post.create!({ title: "test2", content: "http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/", picture: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
-post3 = Post.create!({ title: "test3", content: "http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano/", picture: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
+post1 = Post.create!({ title: "Ondernemer van de week: Gabriela Baars Romano", content: "http://woerden.hu.nl/ondernemer-van-de-week-gabriela-baars-romano", picture: "http://woerden.hu.nl/wp-content/uploads/sites/12/resized/2017-09-Que-Rico--1020x574-cropped.jpg" })
+post2 = Post.create!({ title: "7 x zo nemen unicorns heel Woerden over", content: "https://indebuurt.nl/woerden/winkelen/7x-unicorns-nemen-woerden~11783/3", picture: "https://quericocakes.herokuapp.com/uploads/photo/image/25/21686404_757547807785357_1979822840329670546_n.jpg" })
 
-
-photo1 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226760/cake1_yjslto.jpg" } )
-photo2 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226760/cake2_ctvmw4.jpg" } )
-photo3 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226760/cake3_mhswjf.jpg" } )
-photo4 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226760/cake4_fxjr3a.jpg" } )
-photo5 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226760/cake5_ceekkc.jpg" } )
-photo6 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226760/cake6_ewjjpl.jpg" } )
-photo7 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake7_aeieh1.jpg" } )
-photo8 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake8_fwqw4a.jpg" } )
-photo9 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake9_hy0t9m.jpg" } )
-photo10 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake10_nsnqeo.jpg" } )
-photo11 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake11_uhn595.jpg" } )
-photo12 = Photo.create!( { remote_image_url: "http://res.cloudinary.com/djxmmaqyo/image/upload/v1508226761/cake12_vunatv.jpg" } )
 
 admin = User.create(email: "admin@querico.com", password: "123456")
