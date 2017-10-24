@@ -20,7 +20,6 @@ class Order < ApplicationRecord
     validates :cake_decoration_color, presence: true, if: -> {cake_decoration_color_needs_validation}
     validates :name, presence: true, if: -> {name_needs_validation}
     validates :telephone, presence: true, if: -> {telephone_needs_validation}
-    validates :cake_toppings, presence: true, if: -> {cake_toppings_needs_validation}
     validates :email, presence: true,format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }, if: -> {email_needs_validation}
 
 end
