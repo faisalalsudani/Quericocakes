@@ -12,25 +12,25 @@ $(document).ready(function() {
 
     if ($('#size_1').is(':checked')) {
       console.log('test');
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MKHBAQG/1.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MKHBAQG/1.png" width="200px">';
     } else if ($('#size_2').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7NDDCJ7P/2.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7NDDCJ7P/2.png" width="200px">';
     } else if ($('#size_3').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99J3NW/3.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99J3NW/3.png" width="200px">';
     } else if ($('#size_4').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MPGCYM7/4.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MPGCYM7/4.png" width="200px">';
     } else if ($('#size_5').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7NAUND6Y/5.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7NAUND6Y/5.png" width="200px">';
     } else if ($('#size_6').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MKHEF16/6.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7MKHEF16/6.png" width="200px">';
     } else if ($('#size_7').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99MLD8/7.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99MLD8/7.png" width="200px">';
     } else if ($('#size_8').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7PBTLNTH/8.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7PBTLNTH/8.png" width="200px">';
     } else if ($('#size_9').is(':checked')) {
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99NXL2/9.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7N99NXL2/9.png" width="200px">';
     } else if ($('#size_10').is(':checked')){
-      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7P5WJYVC/10.png" width="300">';
+      output.innerHTML = '<img src="https://files.slack.com/files-pri/T3EFKFK5Z-F7P5WJYVC/10.png" width="200px">';
     }
   });
 
