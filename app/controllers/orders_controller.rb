@@ -63,7 +63,7 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:cake_size, :cake_flavor, :cake_drip, :cake_decoration, :cake_style,  :name,
-      :telephone, :email, :remarks, :status, :cake_decoration_color => [], :cake_drip_color => [], :cake_filling => [], :cake_decoration => [], :cake_toppings => [])
+    params.require(:order).permit(:cake_toppings, :cake_size, :cake_flavor, :cake_drip, :cake_decoration, :cake_style,  :name,
+      :telephone, :email, :remarks, :status, :cake_decoration_color => [], :cake_drip_color => [], :cake_filling => [], :cake_decoration => [])
   end
 end

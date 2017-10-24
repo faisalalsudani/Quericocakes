@@ -85,7 +85,7 @@
                       <% if(order.cake_filling.present?) %>
                         <td>
                           <% order.cake_filling.each do |filling| %>
-                            <%= filling.to_s.humanize %>
+                            <%= filling.humanize %><%= "," unless filling == order.cake_filling.last %>
                           <% end %>
                         </td>
                         <% else %>
@@ -96,8 +96,8 @@
                       <td>Decoration type</td>
                         <% if(order.cake_decoration.present?) %>
                           <td>
-                            <% order.cake_decoration.each do |decoration| %>
-                              <%= decoration.to_s.humanize %>
+                            <% order.cake_decoration.map do |decoration| #order.cake_decoration.each do |decoration| %>
+                              <%= decoration.humanize %><%= "," unless decoration == order.cake_decoration.last %>
                             <% end %>
                           </td>
                         <% else %>
@@ -109,7 +109,7 @@
                       <% if(order.cake_decoration_color.present?) %>
                         <td>
                           <% order.cake_decoration_color.each do |color| %>
-                            <%= color.to_s.humanize %>
+                            <%= color.humanize %><%= "," unless color == order.cake_decoration_color.last %>
                           <% end %>
                         </td>
                       <% else %>
@@ -130,7 +130,7 @@
                         <% if order.cake_drip_color.present? %>
                         <td>
                           <% order.cake_drip_color.each do |color| %>
-                            <%= color.humanize %>
+                            <%= color.humanize %><%= "," unless color == order.cake_drip_color.last %>
                           <% end %>
                         </td>
                         <% else %>
@@ -138,16 +138,8 @@
                         <% end %>
                     </tr>
                     <tr>
-                        <td>Cake topping(s)</td>
-                        <% if order.cake_toppings.present? %>
-                        <td>
-                          <% order.cake_toppings.each do |topping| %>
-                            <%= topping %>
-                          <% end %>
-                        </td>
-                        <% else %>
-                          <td style="color: red;">No topping specified</td>
-                        <% end %>
+                        <td>Cake topping</td>
+                        <td><%= order.cake_toppings.humanize %></td>
                     </tr>
 
                   </table>
