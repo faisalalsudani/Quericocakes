@@ -51,13 +51,13 @@
 }
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(1)}
-    to {-webkit-transform:scale(2)}
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-    from {transform:scale(1)}
-    to {transform:scale(2)}
+    from {transform:scale(0)}
+    to {transform:scale(1)}
 }
 
 /* The Close Button */
@@ -159,7 +159,7 @@
 
 
                 <div style="float: left;" >
-                  <%= image_tag photo.image, class: "modal-content", id: "modal#{photo.id}", style: "transform: scale(2); z-index: 10; max-width: 40vw" %>
+                  <%= image_tag photo.image, class: "modal-content", id: "modal#{photo.id}", style: "transform: scale(1); z-index: 10; max-width: 40vw" %>
                 </div>
 
 
